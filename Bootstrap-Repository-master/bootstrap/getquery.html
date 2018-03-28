@@ -12,10 +12,10 @@
     <script src="js/index.js"></script>
              
 
-</script>
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
- 
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 
 </head>
 <body>
@@ -24,35 +24,40 @@
     <div class="row">
   <div class="col-sm-4"></div>
   
- <div class="col-sm-4 GetQueryclass " border-style: solid;>
+ <div class="col-sm-4 GetQueryclass " >
      
-     <img src="image/Logo.png" class="img-rounded" alt="Cinque Terre">
+     <img src="image/logo.png" class="img-rounded img-responsive center-block" width="220" height="220"> 
          
-     <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown" onclick="myFunction()" id="myDropdown">User Request
-               <span class="caret"></span>
-             </button>
-                 <ul  class="dropdown-menu">
-                     <li><a href="#">Hotel Booking Request</a></li>
-                     <li><a href="#">Flight Ticket Booking Request</a></li>
-                     <li><a href="#">Visa Request</a></li>
-                     <li><a href="#">Lunch Arragement for user</a></li>
-                     <li><a href="#">Taxi Arrangement</a></li>
-                </ul>
-    </div>
+    <div class="form-group">
+         <div class="form-group input-group input-group-lg">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </span>
+   
+     <select id="User Request" class="form-control" name="User Request">
+         <option value="Hotel Booking Request">Hotel Booking Request</option>
+         <option value="Flight Ticket Booking Request">Flight Ticket Booking Request</option>
+         <option value="VISA Request">VISA Request</option>
+         <option value="Lunch Arrangement For Guest">Lunch Arrangement For Guest</option>
+         <option value="Taxi Arrangement">Taxi Arrangement</option>
+     </select> 
+ </div>
+
      
-     <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown">Person View
-               <span class="caret"></span>
-             </button>
-                 <ul class="dropdown-menu">
-                     <li><a href="#">Person1</a></li>
-                     <li><a href="#">Person2</a></li>
-                     <li><a href="#">Person3</a></li>
-                     <li><a href="#">Person4</a></li>
-                     <li><a href="#">Person5</a></li>
-                </ul>
-    </div>
+    <div class="form-group">
+         <div class="form-group input-group input-group-lg">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </span>
+     
+     <select id="Person View" class="form-control" name="Person View">
+         <option value="Person1">Person1</option>
+         <option value="Person1">Person1</option>
+         <option value="Person1">Person1</option>
+         <option value="Person1">Person1</option>
+         <option value="Person1">Person1</option>
+     </select> 
+ </div>
      
       <button type="button" class="btn btn-success">Submit</button>
 </div>
