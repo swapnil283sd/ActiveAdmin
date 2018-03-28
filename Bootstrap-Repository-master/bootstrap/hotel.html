@@ -26,19 +26,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="css/hotel_css.css">
-    <!--<script type="text/javascript">
 
-        function disableElement() {
-            if (document.getElementById("check").checked) {
-                document.getElementById("preferance1").disabled = true;
-                document.getElementById("preferance2").disabled = true;
-            }
-            else {
-                document.getElementById("preferance1").disabled = false;
-                document.getElementById("preferance2").disabled = false;
-            }
-        }
-    </script>-->
     <script>
         $(document).ready(function () {
             var date_input = $('input[name="date"]'); //our date input has the name "date"
@@ -53,12 +41,15 @@
     </script>
 
 </head>
-<body>
-    <form>
+<body style="background-image:url(hotel.jpg);background-repeat: no-repeat;background-size: cover;background-position: center;">
+    <form name="hotel" method="post" onsubmit="return validateForm()"action="hotel.html" >
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="jumbotron maincontainer" style="margin-top:100px">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="jumbotron maincontainer" style="margin-top:40px">
+                        <div>
+                            <img src="logo.png" class="imglogo img-responsive center-block">
+                        </div>
                         <div class="form-group input-group input-group-lg">
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-user"></span>
@@ -71,42 +62,52 @@
                             </span>
                             <input type="text" class="form-control" id="city" placeholder="Enetr city, location or Hotel Name">
                         </div>
-                        <div class="checkbox">
-                            <label><input type="checkbox" id="check" onclick="disableElement()">No Preferance</label>
+                        
+                        <div class="checkbox col-md-offset-4">
+                            <label><input type="checkbox" id="check" onclick="disableElement()">No Preference </label>
                         </div>
                         <div class="form-group input-group input-group-lg">
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-home"></span>
                             </span>
-                            <input type="text" class="form-control" id="preferance1" placeholder="Preferance 1">
+                            <input type="text" class="form-control" id="preferance1" placeholder="Preference  1">
                         </div>
                         <div class="form-group input-group input-group-lg">
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-home"></span>
                             </span>
-                            <input type="text" class="form-control" id="preferance2" placeholder="Preferance 2">
+                            <input type="text" class="form-control" id="preferance2" placeholder="Preference  2">
                         </div>
+                      
+                        <div class="form-group col-md-12 input-group input-group-lg" >
+                         
+                                <span class="input-group-addon" >
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                                <input class="form-control" id="start_date" name="date" placeholder="Check In" type="text" />
+                                               
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                                <input class="form-control" id="end_date" name="date" placeholder="Check Out" type="text" />
+                         </div>
+                     
 
-                        <div class="form-group  input-group input-group-lg">
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                            <input class="form-control" id="start_date" name="date" placeholder="Check In" type="text" />
-                        </div>
-                        <div class="form-group  input-group input-group-lg">
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                            <input class="form-control" id="end_date" name="date" placeholder="Check Out" type="text" />
-                        </div>
-
-
-                        <div class="form-group input-group input-group-lg">
+                        <div class="form-group col-md-12 input-group input-group-lg">
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-user"></span>
                             </span>
                             <input type="text" class="form-control" id="members" placeholder="Members">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-home"></span>
+                            </span>
+                            <input class="form-control" id="room_count" name="no_room" placeholder="No.of Rooms" type="text" />
                         </div>
+
+                        <div>
+                            <button type="button" class="btn btn-success center-block ">SUBMIT</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
