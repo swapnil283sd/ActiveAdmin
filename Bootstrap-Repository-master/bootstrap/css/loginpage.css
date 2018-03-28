@@ -1,0 +1,30 @@
+/*
+	Comment
+*/
+
+a { /* Comment */ color: /* Comment */ Red; }
+
+body {
+	font-family: 'Quicksand', sans-serif;
+}
+
+.loginclass{
+   border: 6px double lavender;
+    padding: 10px;
+    background-color: aliceblue;
+    margin: 16px;
+    margin-top: 150px;
+    
+}
+
+.imglogin{
+    text-align: center;
+    margin-top: 30px;
+    width: 140px;
+    height: 100px;
+}
+
+.imgcontainer{
+    text-align: center;
+}
+
