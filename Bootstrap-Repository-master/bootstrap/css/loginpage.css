@@ -9,15 +9,21 @@ body {
 }
 
 .loginclass{
-   border: 6px double lavender;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  
     padding: 10px;
-    background-color: aliceblue;
+    background-color: lavender;
     margin: 16px;
     margin-top: 150px;
     
 }
 
 .imglogin{
+    
+    margin-bottom: 20px;
     text-align: center;
     margin-top: 30px;
     width: 140px;
@@ -26,5 +32,11 @@ body {
 
 .imgcontainer{
     text-align: center;
+}
+
+.btn{
+    padding-bottom: 10px;
+    margin: 30px;
+    
 }
 
