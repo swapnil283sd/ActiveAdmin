@@ -1,0 +1,33 @@
+/*
+	Comment
+*/
+
+a { /* Comment */ color: /* Comment */ Red; }
+
+body {
+
+               font-family: 'Quicksand', sans-serif;
+
+}
+
+ 
+
+.GetQueryclass{
+     margin-top:100px;
+    padding: 50px;
+
+    background-color:lavender;
+   
+    text-align: center;
+
+}
+button{
+  margin: 13px 12px 30px 10px;
+}
+
+.img-rounded
+{
+     padding: 25px 30px 25px 50px;
+}
+.dropdown-menu a:hover {background-color: #ddd}
+ .show {display:block;}
