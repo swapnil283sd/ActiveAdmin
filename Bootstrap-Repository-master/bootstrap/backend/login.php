@@ -7,7 +7,7 @@
 		$emp_username=$_POST['emp_username'];
 		$emp_password=$_POST['emp_password'];
 		
-		$sql = "SELECT * FROM employee where name='$emp_username' and password='$emp_password'";
+		$sql = "SELECT * FROM employee where emp_name='$emp_username' and emp_password='$emp_password'";
 		$result = mysqli_query($conn, $sql);
 		
 		if (mysqli_num_rows($result) > 0) {
