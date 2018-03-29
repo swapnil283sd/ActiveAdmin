@@ -67,7 +67,7 @@ pasting in new css
 }
 
 hr { 
-    display: block;
+    display: block;h2
     margin-top: 0.8em;
     margin-bottom: 0.5em;
     margin-left: auto;
@@ -79,4 +79,8 @@ hr {
 .imgclass{
    width: 140px;
    height: 100px;
+}
+.course{
+    height: 32px;
+    width: 102px;
 }
