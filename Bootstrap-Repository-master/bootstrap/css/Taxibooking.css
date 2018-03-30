@@ -5,7 +5,7 @@ body{
 
 .taxidiv{
     width: 550px;
-    height: 220px;
+    height: auto;
     padding: 20px;
     background-color: #fff;   
     border-radius: 4px; 
@@ -21,6 +21,7 @@ body{
     width: 400px;
     height: 250px;
 }
+
 
 .card {
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
