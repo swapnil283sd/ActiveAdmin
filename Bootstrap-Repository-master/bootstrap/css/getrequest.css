@@ -1,5 +1,5 @@
 body{
-    background-color: #DCE1E6;
+    background-color: #DCE1E6 !important;
     height: 100%;
 }
 
@@ -13,8 +13,14 @@ body{
   margin: auto;      
   z-index: 1;
   position: relative;
+    
 }
-
+.dropdowndiv
+{
+    width:430px;
+        line-height: 2em;
+    
+}
 .topimageclass{
  margin: auto;
     text-align: center;
@@ -46,7 +52,21 @@ body{
 .submitbutton{
     margin: auto;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 09px;
+    padding-left: 185px;
 }
+hr { 
+    display: block;
+    margin-top: 2.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    
+} 
 
-
+.dropdowndiv{
+    height: 46px;
+    width: 428px;
+}
