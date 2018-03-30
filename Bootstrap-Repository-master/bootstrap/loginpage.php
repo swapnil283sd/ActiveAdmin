@@ -55,7 +55,7 @@ session_start();
 
 	<form action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST">
 	   <div class="row">  
-			<div class="col-lg-4 col-sm-4 col-mg-4"> </div>
+			<div class="col-lg-4 col-sm-4 col-xs-4"> </div>
 				<div class="col-sm-4 loginclass">
 					<img src="image/logo.png" class="imglogin img-responsive center-block"/> 
 				
@@ -68,9 +68,13 @@ session_start();
 						<span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
 						<input type="password" name="emp_password" class="form-control" id="password" placeholder="Password">
 					</div>
-					
 					<div class="col-sm-12">
+					<div class="col-sm-4">
+
+					</div>
+					<div class="col-offset-4 col-sm-4 center-block">
 						<button type="submit" class="btn btn-success center-block"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span> Login</button>
+					</div>
 					</div>
 					<div id="login_failed" class="col-sm-12 alert alert-danger invisible">
 						<strong>Login Failed try Again!</strong> Please check Username and Password....
