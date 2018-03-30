@@ -10,6 +10,9 @@
      <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/getrequest.js"></script>
+     <link rel="stylesheet" href="css/semantic.min.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/semantic.min.js"></script>
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
     <script type="text/javascript" src="js/datepicker.js"></script>
@@ -30,37 +33,61 @@
               
                 <div class="querydiv card">
                 
-                    <div class=" form-group input-group input-group-lg">
-                        
-                            <span class="input-group-addon">
-                               <i class="fa fa-question-circle-o" aria-hidden="true"></i>
-                            </span>
-                          <select class="form-control" id="query_details">
-                             <option>---------------Query Details---------------</option>
-                             <option>Hotel Booking Request</option>
-                             <option>Flight Ticket Booking Request</option>
-                             <option>VISA Request</option>
-                             <option>Lunch Arrangement For User</option>
-                             <option>Taxi Arrangement</option>
-                         </select>
+                   <div class="dropdowndiv ui selection dropdown ">
+                       
+  										<input type="hidden" name="Query Details" style="height:44px;" />
+                       
+  											<i class="dropdown icon"></i>
+                       
+  											<div class="default text ">Query Details</div>
+											
+ 								      			  <div class="menu">
+												  
+                <div class="item" data-value="hotel Booking Request" data-text="hotel Booking Request">
+      		      <i class="remove circle outline icon"></i>hotel Booking Request</div>
 
-                    </div>
+   	             <div class="item" data-value="Flight ticket Booking Request" data-text="Flight Ticket Booking Request">
+      													  <i class="remove circle outline icon"></i>Flight Ticket Booking Request</div>
+
+    								       				  <div class="item" data-value="VISA Request" data-text="VISA Request">
+      								  				      <i class="remove circle outline icon"></i>VISA Request</div>
+
+                                                        <div class="item" data-value="Lunch Arragement For User" data-text="Lunch Arragement For User">
+      								  				      <i class="remove circle outline icon"></i>Lunch Arragement For User</div>
+                                                          
+                                                      <div class="item" data-value="Taxi Arragement" data-text="Taxi Arragement">
+      								  				      <i class="remove circle outline icon"></i>Taxi Arragement</div>
+                       
+  												
+                       </div>
+                    </div><br><br>
                     
-                    <div class="form-group input-group input-group-lg">
-                        
-                            <span class="input-group-addon ">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                            </span>
-                            <select class="form-control" id="admin_name">
-                               <option>---------------Admin Name----------------</option>
-                               <option>Person 1</option>
-                               <option>Person 2</option>
-                               <option>Person 3</option>
-                               <option>Person 4</option>
-                               <option>Person 5</option>
-                           </select>
-                    </div>               
-                
+                              
+                 <div class="dropdowndiv ui selection dropdown">
+
+  										<input type="hidden" name="Admin Name">
+  											<i class="dropdown icon"></i>
+  											<div class="default text">Admin Name</div>
+											
+ 								      			  <div class="menu">
+												  
+                                                          <div class="item" data-value="person 1" data-text="person 1">
+      													  <i class="remove circle outline icon"></i>person 1</div>
+
+   														  <div class="item" data-value="person 2" data-text="person 2">
+      													  <i class="remove circle outline icon"></i>person 2</div>
+
+    								       				  <div class="item" data-value="person 3" data-text="person 3">
+                                                              <i class="remove circle outline icon"></i>person 3</div>
+
+                                                        <div class="item" data-value="person 4" data-text="person 4">
+      								  				      <i class="remove circle outline icon"></i>person 4</div>
+                                                          
+                                                      <div class="item" data-value="person 5" data-tex="person 5">
+      								  				      <i class="remove circle outline icon"></i>person 5</div>
+
+  												</div>
+                    </div><br>
                             
                     
                     <div class="row">
@@ -68,7 +95,7 @@
                         <div class="col-sm-4 " >
                         
                     </div>
-                    
+                    <hr>
                         <div class="col-sm-4 submitbutton" >
                          <button type="submit" class="btn btn-primary"><i class="fa fa-upload" aria-hidden="true"></i> &nbsp;&nbsp;Submit</button> 
                     </div>
@@ -86,6 +113,11 @@
 
     
 </body>
-    
+   <script>
+
+$('.ui.dropdown')
+  .dropdown();
+  
+</script> 
  
 </html>
