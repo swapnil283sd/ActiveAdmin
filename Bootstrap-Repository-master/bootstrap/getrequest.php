@@ -21,10 +21,18 @@ session_start();
 	<link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
     <script type="text/javascript" src="js/datepicker.js"></script>
     <link rel="stylesheet" href="css/datepickerstyle.css" />
+    <link rel="stylesheet" href="css/header.css">
     
 </head>
 
 <body>
+    <div class="navbar">
+		<img  src="image/logo.png" />    
+		<a href="#contact"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
+		<a href="#news"><i class="fa fa-list-ol" aria-hidden="true"></i>&nbsp; My Activity</a>
+		<a href="#home"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
+    </div>	
+    
     <div class="topimageclass">
         <img src="image/topimage.png" style="width: 400px;height: 300px;" />
     </div>  
@@ -32,11 +40,12 @@ session_start();
     <form class="ui form" action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST">
 		<div class="querydiv card">
 			<div class="dropdowndiv ui selection dropdown ">
-				<input type="hidden" name="Query Details" style="height:40px;" />
+				<input type="hidden" name="query_details" style="height:40px;" >
 				<i class="dropdown icon"></i>
                 <div class="default text ">Query Details</div>
-				<select name="query_details" class="ui fluid dropdown">
-					<option value="hotel Booking Request">hotel Booking Request</option>
+				<select class="ui fluid dropdown" required class="form-control">
+                    <option value="">Query Details</option>
+					<option value="hotel Booking Request">Hotel Booking Request</option>
 					<option value="Flight Ticket Booking Request">Flight Ticket Booking Request</option>
 					<option value="VISA Request">VISA Request</option>
 					<option value="Lunch Arragement For User">Lunch Arragement For User</option>
@@ -45,16 +54,16 @@ session_start();
 			</div><br><br>
             
 			<div class="dropdowndiv ui selection dropdown">
-				<input type="hidden" name="Admin Name">
+				<input type="hidden" name="admin_name">
   				<i class="dropdown icon"></i>
   				<div class="default text">Admin Name</div>
-				<select name="admin_name" class="ui fluid dropdown">
+				<select class="ui fluid dropdown">
 					<option value="">Admin Name</option>
 					<option value="Omkar Deshpande">Omkar Deshpande</option>
 					<option value="Vaidya Sir">Vaidya Sir</option>
 					<option value="Sachin Kulkarni">Sachin Kulkarni</option>
 				</select>
-			</div><br>
+            </div><br>
 			
 			<div class="row">
 				<div class="col-sm-4 " ></div>
@@ -86,7 +95,7 @@ session_start();
 			 */
 			 $user = $_SESSION["user"];
 			//$user ='umesh';
-			
+            if($query_details!="" & $admin_name != ""){
             $sqle = "SELECT * FROM employee where emp_name='$user' ";
 			$resulte = mysqli_query($conn, $sqle);
 			
@@ -113,10 +122,23 @@ session_start();
                 $upd = "UPDATE `queries` SET `query_id`='$token' WHERE `srno`='$sr_no'";
                 $updt=mysqli_query($conn,$upd);
                 
-				 header("Location: hotel_booking.php");
+                $_SESSION["query"] = $token;
+                
+                if($letter=='HO'){
+				    header("Location: hotel_booking.php");
+                }else if($letter=='FL'){
+                    header("Location: hotel_booking.php");
+                }else if($letter=='VI'){
+                    header("Location: visa.php");
+                }else if($letter=='LU'){
+                    header("Location: lunchsystem.php");
+                }else if($letter=='TA'){
+                    header("Location: taxibooking.php");
+                }
 
 			}
 		}
+        }
 	
 ?>
 

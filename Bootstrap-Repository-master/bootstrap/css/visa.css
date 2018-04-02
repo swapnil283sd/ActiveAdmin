@@ -1,9 +1,9 @@
 body{
-    background-color: #DCE1E6;
+    background-color: #DCE1E6 !important;
     height: 100%;
 }
 
-.taxidiv{
+.visadiv{
     width: 550px;
     height: auto;
     padding: 20px;
@@ -14,6 +14,13 @@ body{
     position: relative;
 }
 
+.dropdowndiv
+{
+    width:500px;
+        line-height: 4em;
+    margin-left: 20px;
+    height: 46px;
+}
 
 .topimageclass{
     margin: auto;
@@ -32,7 +39,16 @@ body{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-
+hr { 
+    display: block;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-style: inset;
+    border-width: 1px;
+    
+} 
 
 .container {
     padding: 2px 16px;
@@ -46,7 +62,13 @@ body{
 .submitbutton{
     margin: auto;
     text-align: center;
+    padding-top: 09px;
+    padding-left: 240px;
 }
 
-
+.caldiv
+{
+  margin-left: 20px;
+    margin-right: 20px;  
+}
 
