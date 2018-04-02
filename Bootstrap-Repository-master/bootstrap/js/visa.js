@@ -9,9 +9,8 @@ $(document).ready(function () {
             })
         })
 
-$(document).('.ui.dropdown')
-  .dropdown();
-
-
-  
  
+          $(document).ready(function() {
+              $('.dropdown').dropdown();
+              $('.ui.checkbox').checkbox();
+          });

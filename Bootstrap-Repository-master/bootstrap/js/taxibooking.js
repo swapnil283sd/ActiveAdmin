@@ -9,9 +9,4 @@ $(document).ready(function () {
             })
         })
 
-$(document).('.ui.dropdown')
-  .dropdown();
 
-
-  
- 
