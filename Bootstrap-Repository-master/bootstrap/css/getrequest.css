@@ -1,20 +1,26 @@
 body{
-    background-color:#FBFCFC !important;
+    background-color: #DCE1E6 !important;
     height: 100%;
 }
 
 
-.lunchdiv{
-  width: 550px;
-  height: 271px;
-  padding: 16px;
+.querydiv{
+  width: 500px;
+  height: 250px;
+  padding: 35px;
   background-color: #fff;   
   border-radius: 4px; 
   margin: auto;      
   z-index: 1;
   position: relative;
+    
 }
-
+.dropdowndiv
+{
+    width:430px;
+        line-height: 2em;
+    
+}
 .topimageclass{
  margin: auto;
     text-align: center;
@@ -46,51 +52,21 @@ body{
 .submitbutton{
     margin: auto;
     text-align: center;
+    padding-top: 09px;
+    padding-left: 185px;
 }
-/***
-
-For Login Css remove after
-pasting in new css
-
-**/
-
-
-
-.logindiv{
-    text-align: center;
-  width: 550px;
-  height: 450px; 
-  margin-top: 160px;
-  padding: 16px;
-  background-color: #fff;   
-   border-radius: 4px;  
-}
-
 hr { 
-    display: block;h2
-    margin-top: 0.8em;
+    display: block;
+    margin-top: 2.5em;
     margin-bottom: 0.5em;
     margin-left: auto;
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
+    
 } 
 
-.imgclass{
-   width: 140px;
-   height: 100px;
-}
-.course{
-    height: 32px;
-    width: 102px;
-}
-
-.ui
-{
+.dropdowndiv{
     height: 46px;
-    width: 245.4px;
-}
-.uione
-{
-    height: 46px;
+    width: 428px;
 }
