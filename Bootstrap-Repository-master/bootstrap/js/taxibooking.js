@@ -9,13 +9,4 @@ $(document).ready(function () {
             })
         })
 
-<<<<<<< HEAD
 
-=======
-$(document).('.ui.dropdown')
-  .dropdown();
-
-
-  
- 
->>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850

@@ -1,35 +1,20 @@
 body{
-<<<<<<< HEAD
-    background-color: #DCE1E6;
-=======
-    background-color: #DCE1E6 !important;
->>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
+    background-color:#FBFCFC !important;
     height: 100%;
 }
 
 
-.querydiv{
-  width: 500px;
-  height: 250px;
-  padding: 35px;
+.lunchdiv{
+  width: 550px;
+  height: 271px;
+  padding: 16px;
   background-color: #fff;   
   border-radius: 4px; 
   margin: auto;      
   z-index: 1;
   position: relative;
-<<<<<<< HEAD
 }
 
-=======
-    
-}
-.dropdowndiv
-{
-    width:430px;
-        line-height: 2em;
-    
-}
->>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
 .topimageclass{
  margin: auto;
     text-align: center;
@@ -61,28 +46,51 @@ body{
 .submitbutton{
     margin: auto;
     text-align: center;
-<<<<<<< HEAD
-    padding-top: 20px;
 }
+/***
+
+For Login Css remove after
+pasting in new css
+
+**/
 
 
-=======
-    padding-top: 09px;
-    padding-left: 185px;
+
+.logindiv{
+    text-align: center;
+  width: 550px;
+  height: 450px; 
+  margin-top: 160px;
+  padding: 16px;
+  background-color: #fff;   
+   border-radius: 4px;  
 }
+
 hr { 
-    display: block;
-    margin-top: 2.5em;
+    display: block;h2
+    margin-top: 0.8em;
     margin-bottom: 0.5em;
     margin-left: auto;
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
-    
 } 
 
-.dropdowndiv{
-    height: 46px;
-    width: 428px;
+.imgclass{
+   width: 140px;
+   height: 100px;
 }
->>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
+.course{
+    height: 32px;
+    width: 102px;
+}
+
+.ui
+{
+    height: 46px;
+    width: 245.4px;
+}
+.uione
+{
+    height: 46px;
+}

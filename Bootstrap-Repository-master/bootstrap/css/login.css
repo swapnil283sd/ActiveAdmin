@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     background-color: #DCE1E6;
     height: 100%;
@@ -12,16 +13,38 @@ body{
   margin: auto;      
   z-index: 1;
   position: relative;
+=======
+body {
+    background-color: #DCE1E6 !important;
+    height: 100%;
+}
+
+.logindiv {
+    width: 550px;
+    height: 380px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+    margin-top: -35px;
+>>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
 }
 
 hr { 
     display: block;
+<<<<<<< HEAD
     margin-top: 0.8em;
+=======
+    margin-top: 0.1em;
+>>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
     margin-bottom: 0.5em;
     margin-left: auto;
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
+<<<<<<< HEAD
 } 
 
 .imgclass{
@@ -29,17 +52,34 @@ hr {
 }
 
 
+=======
+}
+.footer{
+    margin-top:0px;
+    margin-bottom:20px;
+}
+
+.imgclass {
+    text-align: center;
+}
+
+>>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
 .imgclass > img{
     width: 140px;
    height: 100px;
 }
 .topimageclass{
  margin: auto;
+<<<<<<< HEAD
     text-align: center;
  width: 400px;height: 250px;
    
 }
 
+=======
+ text-align: center;
+ width: 400px;height: 280px;  }
+>>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
 
 .card {
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
@@ -50,8 +90,11 @@ hr {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
 .container {
     padding: 2px 16px;
 }
@@ -61,7 +104,11 @@ hr {
 	color: #fff;	
 }
 
+<<<<<<< HEAD
 .loginbutton{
+=======
+.loginbutton {
+>>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
     margin: auto;
     text-align: center;
 }
@@ -73,7 +120,21 @@ hr {
     position: absolute;
     z-index: 1;
     padding: 5px;
+<<<<<<< HEAD
     visibility:hidden;
+=======
+}
+
+.submitbutton{
+    text-align:center;
+}
+
+.btn {
+    font-size: 17px;
+    padding: 7px !important;
+    padding-right: 35px !important;
+    padding-left: 35px !important;
+>>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
 }
 
 
