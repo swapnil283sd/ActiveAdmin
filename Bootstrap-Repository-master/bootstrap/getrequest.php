@@ -76,9 +76,7 @@ session_start();
         </div>
     </form>
     
-	<?php
-	
-	
+	<?php	
 		if(!empty($_POST)){
 			include_once 'backend/dbconnect.php';	  
 			 $query_details=$_POST['query_details'];
@@ -144,11 +142,9 @@ session_start();
 
     
 </body>
-   <script>
-
-$('.ui.dropdown')
-  .dropdown();
-  
+<script>
+    $('.ui.dropdown')
+    .dropdown();
 </script> 
  
 </html>

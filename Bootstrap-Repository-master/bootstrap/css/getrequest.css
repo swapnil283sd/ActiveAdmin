@@ -1,9 +1,5 @@
 body{
-<<<<<<< HEAD
-    background-color: #DCE1E6;
-=======
     background-color: #DCE1E6 !important;
->>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
     height: 100%;
 }
 
@@ -17,10 +13,6 @@ body{
   margin: auto;      
   z-index: 1;
   position: relative;
-<<<<<<< HEAD
-}
-
-=======
     
 }
 .dropdowndiv
@@ -29,7 +21,6 @@ body{
         line-height: 2em;
     
 }
->>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
 .topimageclass{
  margin: auto;
     text-align: center;
@@ -61,12 +52,6 @@ body{
 .submitbutton{
     margin: auto;
     text-align: center;
-<<<<<<< HEAD
-    padding-top: 20px;
-}
-
-
-=======
     padding-top: 09px;
     padding-left: 185px;
 }
@@ -85,4 +70,3 @@ hr {
     height: 46px;
     width: 428px;
 }
->>>>>>> aaa3dc54e77c57f573724b494db71c7cde6f3850
