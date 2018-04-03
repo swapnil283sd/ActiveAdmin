@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/backpage.css">
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/ticket.css">
+    <script src="js/jquery.min.js"></script>
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
 	
     <style>
@@ -32,24 +33,14 @@
                                 <table class="table" id="querytable">
                                         <thead>
                                                 <tr>
+                                                        <th>Ticket No</th>
                                                         <th>Query</th>
                                                         <th>Admin Name</th>
                                                         <th>Date/Time</th>
                                                         <th> </th>
                                                 </tr>
                                         </thead>
-                                    
-                                    <tbody>
-                          
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>
-                                            </td>
-                        
-                                        </tr>
-                                    </tbody>
+                                
                                     
   
                                 </table>
@@ -57,20 +48,8 @@
                             </div>
            </div>    
                              
-                    
+        
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-             
                 <div class="second col-sm-6" >  
                         
                             
@@ -153,7 +132,7 @@
                         var table = document.getElementById("querytable");
                         
                         for(var i=0;i<myArray.length;i++){
-                            console.log(i);
+                           
                             var myObject=myArray[i];
                              var row = table.insertRow(1);
                             
@@ -167,25 +146,28 @@
                                   row.className='danger';
                             }
                             
-                        var cell1 = row.insertCell(0);
+                        var cell1 = row.insertCell(0);    
                         var cell2 = row.insertCell(1);
                         var cell3 = row.insertCell(2);
                         var cell4 = row.insertCell(3);
-
-                        cell1.innerHTML = myObject.request;
-                        cell2.innerHTML = myObject.admin_name;
-                        cell3.innerHTML = myObject.date_time;
+                        var cell5 = row.insertCell(4);
+                
+                        cell1.innerHTML=myObject.query_id;    
+                        cell2.innerHTML = myObject.request;
+                        cell3.innerHTML = myObject.admin_name;
+                        cell4.innerHTML = myObject.date_time;
                             
-                        cell4.innerHTML = '';
+                        cell5.innerHTML = '<input type="button" class="btn btn-primary" value="Show" id='+myObject.query_id + '>';
 
                              
-                            var btn = document.createElement('input');
+                         /*  var btn = document.createElement('input');
                             btn.type = "button";
                             btn.className = "btn btn-primary";
+                              btn.id = myObject.query_id;
                             btn.value="Show";
-                            btn.onclick="getTicketData()";
-                            cell4.appendChild(btn);
-                            
+                          btn.onclick = (function(entry) {return function() {chooseUser(entry);}});
+                            cell5.appendChild(btn);
+                            --!>*/
                         }
                        
                     }
@@ -195,9 +177,9 @@
                 xmlhttprequest.send();
    
             
-                function getTicketData(){
-                    alert();
-                }
+
+
+           
                 
             </script>  
 
