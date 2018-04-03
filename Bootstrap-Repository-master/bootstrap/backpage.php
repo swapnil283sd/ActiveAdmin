@@ -30,7 +30,7 @@
                             
                                   
                     <div class="second_upper"   >
-                                         2
+                                         <?php include ("ticket.php");?>
                                          
                            
                             

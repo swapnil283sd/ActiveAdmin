@@ -6,7 +6,7 @@
 
 .second_upper{
     height: 50%;
-    border: 2px solid #000;
+    border-left: 5px solid #1480BF;
     border-radius: 5px;
     
     background-color: chartreuse;
