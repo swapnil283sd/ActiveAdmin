@@ -13,7 +13,7 @@ header('Content-Type:application/json');
 		    // output data of each row
 		    while($row = mysqli_fetch_assoc($result)) {
                 $date_time=$row['request_date'].','.$row['request_time'];
-		    $data[]=array("Emp name"=>$row['emp_name'], "Admin Name"=>$row['admin_name'], "Request"=>$row['request_details'], "Status"=>$row['status'],"Query Id"=>$row['query_id'],"Date Time"=>$date_time );
+		    $data[]=array("emp_name"=>$row['emp_name'], "admin_name"=>$row['admin_name'], "request"=>$row['request_details'], "status"=>$row['status'],"query_id"=>$row['query_id'],"date_time"=>$date_time );
 		    
 		    }
 			 echo json_encode($data);
