@@ -22,74 +22,54 @@
             <div class="main">
                 
               
+                
+                
+                
                     
-                <div class="first col-sm-6 "> 
+            <div class="first col-sm-6 "> 
                         <div class="container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Column 1</th>
-                        <th>Column 2</th>
-                        <th>Column 3</th>
-                        <th>Column 4</th>
-                    </tr>
-                </thead>
-            <tbody>
+                            
+                                <table class="table" id="querytable">
+                                        <thead>
+                                                <tr>
+                                                        <th>Query</th>
+                                                        <th>Admin Name</th>
+                                                        <th>Date/Time</th>
+                                                        <th> </th>
+                                                </tr>
+                                        </thead>
+                                    
+                                    <tbody>
                           
-                    <tr class="info">
-                        <td>Request Submitted </td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <button type="button" class="btn btn-warning">Edit</button>
-                            <button type="button" class="btn btn-success">Complete</button>
-                            <button type="button" class="btn btn-primary">Show</button>
-                        </td>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                            </td>
                         
-                    </tr>
-                
-                    <tr class="warning">
-                        <td>Inprocess</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <button type="button" class="btn btn-warning">Edit</button>
-                            <button type="button" class="btn btn-success">Complete</button>
-                            <button type="button" class="btn btn-primary">Show</button>
-                        </td>
-                    </tr>
-                
-                    <tr class="success">
-                        <td>Completed</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <button type="button" class="btn btn-warning">Edit</button>
-                            <button type="button" class="btn btn-success">Complete</button>
-                            <button type="button" class="btn btn-primary">Show</button>
-                        </td>
-                    </tr>
-                
-                    <tr class="danger">
-                        <td>Request Incomplete</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <button type="button" class="btn btn-warning">Edit</button>
-                            <button type="button" class="btn btn-success">Complete</button>
-                            <button type="button" class="btn btn-primary">Show</button>
-                        </td>
-                    </tr>
-     
-                </tbody>
+                                        </tr>
+                                    </tbody>
+                                    
   
-            </table>
+                                </table>
         
-        </div>
-                        
-                </div>    
+                            </div>
+           </div>    
                              
                     
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
              
                 <div class="second col-sm-6" >  
                         
@@ -156,7 +136,70 @@
                         
                 </div>    
                    
-           
+            <script>
+                    
+                var xmlhttprequest=new XMLHttpRequest();
+                
+                xmlhttprequest.onreadystatechange=function(){
+                    
+                    if(this.readyState==4 && this.status==200){
+                       var myArray=JSON.parse(this.responseText)
+                       
+                       
+                        
+                        
+                     
+                      
+                        var table = document.getElementById("querytable");
+                        
+                        for(var i=0;i<myArray.length;i++){
+                            console.log(i);
+                            var myObject=myArray[i];
+                             var row = table.insertRow(1);
+                            
+                        row.className='info';
+                            
+                            if(myObject.status== '1'){
+                                 row.className='success';
+                            }else if(myObject.status== '2'){
+                                  row.className='warning';
+                            }else if(myObject.status== '3') {
+                                  row.className='danger';
+                            }
+                            
+                        var cell1 = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        var cell3 = row.insertCell(2);
+                        var cell4 = row.insertCell(3);
+
+                        cell1.innerHTML = myObject.request;
+                        cell2.innerHTML = myObject.admin_name;
+                        cell3.innerHTML = myObject.date_time;
+                            
+                        cell4.innerHTML = '';
+
+                             
+                            var btn = document.createElement('input');
+                            btn.type = "button";
+                            btn.className = "btn btn-primary";
+                            btn.value="Show";
+                            btn.onclick="getTicketData()";
+                            cell4.appendChild(btn);
+                            
+                        }
+                       
+                    }
+                    
+                }
+                xmlhttprequest.open("GET","backend/query_data.php",true);
+                xmlhttprequest.send();
+   
+            
+                function getTicketData(){
+                    alert();
+                }
+                
+            </script>  
 
     </body>
 
