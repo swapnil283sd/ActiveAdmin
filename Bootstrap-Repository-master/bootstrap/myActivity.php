@@ -157,7 +157,7 @@
                         cell3.innerHTML = myObject.admin_name;
                         cell4.innerHTML = myObject.date_time;
                             
-                        cell5.innerHTML = '<input type="button" class="btn btn-primary" value="Show" id='+myObject.query_id + '>';
+                        cell5.innerHTML = '<input type="button" class="btn btn-primary" value="how" id='+myObject.query_id + 'onclick="myFunction()"'+'>';
 
                              
                          /*  var btn = document.createElement('input');
