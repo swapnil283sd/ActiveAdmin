@@ -273,7 +273,7 @@ function myFunction(mystring) {
 }
                 
                 function gotoHome(){
-                    alert();
+                 
                      window.location='http://localhost/getrequest.php';
                 }
 
