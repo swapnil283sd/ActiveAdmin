@@ -24,7 +24,7 @@
             if (mysqli_num_rows($result) > 0) {
 		    // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
-                    $data=array("guest_name"=>$row['hotel_guestname'], "city"=>$row['hotel_city'], "pref1"=>$row['hotel_pre1'], "pref2"=>$row['hotel_pre2'],"chechin"=>$row['hotel_checkin'],"checkout"=>$row['hotel_checkout'], "member"=>$row['hotel_member'],"current_date"=>$row['hotel_roomcount'],"querytype"=>'FL');
+                    $data=array("guest_name"=>$row['flight_on_person'], "startdate"=>$row['flight_start_date'], "enddate"=>$row['flight_end_date'], "fromcity"=>$row['flight_origin'],"tocity"=>$row['flight_desctination'],"passportno"=>$row['flight_passport_number'],"querytype"=>'FL');
 		      }
 			  echo json_encode($data);
             }
