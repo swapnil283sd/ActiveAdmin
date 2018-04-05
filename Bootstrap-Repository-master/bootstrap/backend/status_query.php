@@ -18,7 +18,7 @@
 			  echo json_encode($data);
             }
 		  }elseif($status=='FL'){
-            $sql = "SELECT * FROM `hotel_book` WHERE `query_id`='$query_id'";
+            $sql = "SELECT * FROM `flight_book` WHERE `query_id`='$query_id'";
             $result = mysqli_query($conn, $sql);
                 echo '$result';
             if (mysqli_num_rows($result) > 0) {
