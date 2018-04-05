@@ -13,6 +13,7 @@ session_start();
 	<link rel="stylesheet" href="css/getrequest.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/getrequest.js"></script>
     <link rel="stylesheet" href="css/semantic.min.css"/>
     <script src="js/jquery.min.js"></script>
     <script src="js/semantic.min.js"></script>
@@ -20,7 +21,6 @@ session_start();
 	<link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
     <script type="text/javascript" src="js/datepicker.js"></script>
     <link rel="stylesheet" href="css/datepickerstyle.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
     <link rel="stylesheet" href="css/header.css">
     
 </head>
@@ -28,9 +28,9 @@ session_start();
 <body>
     <div class="navbar">
 		<img  src="image/logo.png" />    
-		<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
-		<a href="myactivity.php"><i class="fa fa-list-ol" aria-hidden="true"></i>&nbsp; My Activity</a>
-		<a href="getrequest.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
+		<a href="#contact"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
+		<a href="#news"><i class="fa fa-list-ol" aria-hidden="true"></i>&nbsp; My Activity</a>
+		<a href="#home"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
     </div>	
     
     <div class="topimageclass">
@@ -54,7 +54,7 @@ session_start();
 			</div><br><br>
             
 			<div class="dropdowndiv ui selection dropdown">
-				<input type="hidden" name="admin_name" required>
+				<input type="hidden" name="admin_name">
   				<i class="dropdown icon"></i>
   				<div class="default text">Admin Name</div>
 				<select class="ui fluid dropdown">
@@ -102,12 +102,11 @@ session_start();
 				
 				while($row = $resulte->fetch_assoc()) {
 					$email = $row["emp_email"];
-                    $emp_id = $row["emp_id"];
 				}
                 //request token generate
                 $letter = strtoupper(mb_substr($query_details, 0, 2));
                 
-			    $sqlr="INSERT INTO queries(emp_name,emp_id,emp_email,admin_name,request_details, request_date, request_time, status) values ('$user','$emp_id','$email','$admin_name','$query_details',CURRENT_DATE(),CURRENT_TIME(),'1')  ";
+			    $sqlr="INSERT INTO queries(emp_name,emp_email,admin_name,request_details, request_date, request_time, status) values ('$user','$email','$admin_name','$query_details',CURRENT_DATE(),CURRENT_TIME(),'0')  ";
 				$result=mysqli_query($conn,$sqlr);
                 
                 $getsr="SELECT `srno` from `queries` WHERE (`emp_name`='$user' AND `admin_name`='$admin_name' AND `request_date`= CURRENT_DATE() AND `request_time`= CURRENT_TIME())";
@@ -126,7 +125,7 @@ session_start();
                 if($letter=='HO'){
 				    header("Location: hotel_booking.php");
                 }else if($letter=='FL'){
-                    header("Location: flight.php");
+                    header("Location: hotel_booking.php");
                 }else if($letter=='VI'){
                     header("Location: visa.php");
                 }else if($letter=='LU'){

@@ -4,8 +4,6 @@ body {
 }
 
 
-
-
 .hoteldiv {
     width: 550px;
     height: auto;
@@ -18,25 +16,11 @@ body {
     margin-top: -54px;
 }
 
-fieldset {
-    border: 2px solid #107EBE;
-    margin: 0 2px;
-    padding: .35em .625em .75em;
-
-}
-
-legend {
-    width:inherit; /* Or auto */
-    padding:2 10px; !important /* To give a bit of padding on the left and right */
-    border-bottom:none;
-}
-
-
 .topimageclass {
     margin: auto;
     text-align: center;
     width: 400px;
-    height: 300px;
+   height: 140px;
 }
 
 
@@ -93,10 +77,4 @@ hr {
 .clicked {
     zoom:1.5;
 }
-
-textarea {
-    resize: none;
-}
-
-
 

@@ -16,15 +16,15 @@ session_start();
     <script src="js/bootstrap.min.js"></script>
     <script src="js/visa.js"></script>
     <link rel="stylesheet" href="css/semantic.min.css"/>
+    <script src="js/jquery.min.js"></script>
     <script src="js/semantic.min.js"></script>
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
     <script type="text/javascript" src="js/datepicker.js"></script>
     <link rel="stylesheet" href="css/datepickerstyle.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
     <script>
           $(document).ready(function() {
-              $('ui.dropdown').dropdown();
+              $('.dropdown').dropdown();
               $('.ui.checkbox').checkbox();
           });
     </script> 
@@ -34,9 +34,9 @@ session_start();
 <body>
     <div class="navbar">
         <img  src="image/logo.png" />    
-		<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
-		<a href="myactivity.php"><i class="fa fa-list-ol" aria-hidden="true"></i>&nbsp; My Activity</a>
-		<a href="getrequest.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
+        <a href="#contact"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
+        <a href="#news"><i class="fa fa-list-ol" aria-hidden="true"></i>&nbsp; My Activity</a>
+        <a href="#home"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
     </div>	 
     
     <div class="topimageclass">
@@ -46,7 +46,7 @@ session_start();
     <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST">
         <div class="visadiv card">
             <div class="row">
-                <div class="caldiv form-group  input-group date input-group-lg" >
+                <div class="caldiv form-group  input-group input-group-lg">
                     <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
                         <input class="form-control" id="date" name="from_date" placeholder="Enter Starting Date" type="text" />
                 </div>

@@ -66,6 +66,13 @@
     border-radius: 5px;
 }
 
+#fixedbutton {
+    position: fixed;
+    top: 0px;
+    left: 0px; 
+    margin: 5px;
+}
+
 .graphicaldiv{
     width:180px;
     height:120px;
@@ -111,3 +118,5 @@ row{
    border: 2px solid #000;
     border-radius: 5px;
 }
+
+

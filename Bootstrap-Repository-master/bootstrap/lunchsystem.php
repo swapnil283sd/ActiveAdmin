@@ -13,16 +13,18 @@ session_start();
 	<link rel="stylesheet" href="css/lunchsystem.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/lunchsystem.js"></script>
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
     <script type="text/javascript" src="js/datepicker.js"></script>
+    <script type="text/javascript" src="js/lunchsystem.js"></script>
     <link rel="stylesheet" href="css/datepickerstyle.css" />
+    <script type="text/javascript" src="js/timepicker.js"></script>
     <link rel="stylesheet" href="css/semantic.min.css"/>
+    <script src="js/jquery.min.js"></script>
     <script src="js/semantic.min.js"></script>
     <script src="js/lunchsystem.js"></script>
     <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
-
     
 </head>
 
@@ -126,7 +128,7 @@ session_start();
 				}
                 //request token generate
                                
-			    $sqlr="INSERT INTO `lunch_book`(`emp_name`, `lunch_guest`, `admin_name`, `querie_id`, `lunch_category`, `lunch_date`, `lunch_member_count`) VALUES ('$emp_name','$guest_name','$admin_name','$query_id','$course','$order_date','$member_count')";
+			    $sqlr="INSERT INTO `lunch_book`(`emp_name`, `admin_name`, `querie_id`, `lunch_category`, `lunch_date`, `lunch_member_count`) VALUES ('$emp_name','$admin_name','$query_id','$course','$order_date','$member_count')";
 				$result=mysqli_query($conn,$sqlr);
                   
                
