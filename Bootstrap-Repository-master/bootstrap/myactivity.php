@@ -33,11 +33,11 @@
                                 <table class="table" id="querytable" style=" border: 1px solid black !important ;">
                                         <thead>
                                                 <tr style=" border: 1px solid black !important ;">
-                                                        <th style=" border: 1px solid black !important ;">Ticket No</th>
+                                                        <th style=" border: 1px solid black !important ;    width: 67px;">Ticket No</th>
                                                         <th style=" border: 1px solid black !important; text-align:center;">Query</th>
                                                         <th style=" border: 1px solid black !important; text-align:center;">Admin Name</th>
                                                         <th style=" border: 1px solid black !important; text-align:center;">Date/Time</th>
-                                                        <th style="border: 1px solid black !important; text-align:center; width: 123px;"> </th>
+                                                        <th style="border: 1px solid black !important; text-align:center; width: 204px;"> </th>
                                                 </tr>
                                         </thead>
                                 
@@ -189,7 +189,7 @@
                         cell3.innerHTML = myObject.admin_name;
                         cell4.innerHTML = myObject.date_time;
                             
-                        cell5.innerHTML = '<input type="button" class="btn btn-primary" value="Show" id='+myObject.query_id + ' onclick="myFunction(\''+myObject.query_id+'\')"'+'>'+'&nbsp;<button class="btn btn-success"  id='+myObject.query_id + ' onclick="calleditPage(\''+myObject.query_id+'\')"'+'><i class="fa fa-pencil" aria-hidden="true"></i></button>';
+                        cell5.innerHTML = '<input type="button" class="btn btn-primary" value="Show" id='+myObject.query_id + ' onclick="myFunction(\''+myObject.query_id+'\')"'+'>'+'&nbsp;<button class="btn btn-warning"  id='+myObject.query_id + ' onclick="calleditPage(\''+myObject.query_id+'\')"'+'><i class="fa fa-pencil" aria-hidden="true"></i></button>'+'&nbsp;<button class="btn btn-danger"  id='+myObject.query_id + ' onclick="calleditPage(\''+myObject.query_id+'\')"'+'><i class="fa fa-trash" aria-hidden="true"></i></button>'+'&nbsp;<button class="btn btn-success"  id='+myObject.query_id + ' onclick="calleditPage(\''+myObject.query_id+'\')"'+'><i class="fa fa-check" aria-hidden="true"></i></button>';
 
                         
                         }

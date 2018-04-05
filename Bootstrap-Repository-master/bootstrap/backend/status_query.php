@@ -13,7 +13,7 @@
             if (mysqli_num_rows($result) > 0) {
 		    // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
-                    $data=array("guest_name"=>$row['hotel_guestname'], "city"=>$row['hotel_city'], "pref1"=>$row['hotel_pre1'], "pref2"=>$row['hotel_pre2'],"chechin"=>$row['hotel_checkin'],"checkout"=>$row['hotel_checkout'], "member"=>$row['hotel_member'],"current_date"=>$row['hotel_roomcount'],"querytype"=>'ho');
+                    $data=array("guest_name"=>$row['hotel_guestname'], "city"=>$row['hotel_city'], "prefone"=>$row['hotel_pre1'], "preftwo"=>$row['hotel_pre2'],"checkin"=>$row['hotel_checkin'],"checkout"=>$row['hotel_checkout'], "member"=>$row['hotel_member'],"room_count"=>$row['hotel_roomcount'],"comment"=>"mycomment");
 		      }
 			  echo json_encode($data);
             }
