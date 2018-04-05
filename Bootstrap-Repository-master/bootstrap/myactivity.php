@@ -20,16 +20,19 @@
 
     <body>
         
+        
             <div class="main">
                 
               
                 
                 
-                
+              
                     
             <div class="first col-sm-6 "> 
+                
+                       
                         <div class="container">
-                            
+                             <button id="fixedbutton" onclick="gotoHome()" class="btn btn-success"><i class="fa fa-home" aria-hidden="true"></i> Home</button>
                                 <table class="table" id="querytable" style=" border: 1px solid black !important ;">
                                         <thead>
                                                 <tr style=" border: 1px solid black !important ;">
@@ -268,6 +271,11 @@ function myFunction(mystring) {
     
     
 }
+                
+                function gotoHome(){
+                    alert();
+                     window.location='http://localhost/getrequest.php';
+                }
 
            function calleditPage(queryId){
                
