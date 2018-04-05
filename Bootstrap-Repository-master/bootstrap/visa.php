@@ -48,11 +48,11 @@ session_start();
             <div class="row">
                 <div class="caldiv form-group  input-group input-group-lg">
                     <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                        <input class="form-control" id="date" name="from_date" placeholder="Enter Starting Date" type="text" />
+                        <input class="form-control" id="visa_start_date" name="from_date" placeholder="Enter Starting Date" type="text" />
                 </div>
                 <div class="caldiv form-group  input-group input-group-lg">
                     <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                        <input class="form-control" id="date" name="to_date" placeholder="Enter End Date" type="text" />
+                        <input class="form-control" id="visa_end_date" name="to_date" placeholder="Enter End Date" type="text" />
                 </div>
                 <div class="dropdowndiv ui selection dropdown">
                     <input type="hidden" name="country">
