@@ -14,7 +14,7 @@ session_start();
     <link rel="stylesheet" href="css/header.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/visa.js"></script>
+    <script src="js/flight_booking.js"></script>
     <link rel="stylesheet" href="css/semantic.min.css"/>
     <script src="js/semantic.min.js"></script>
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
@@ -622,14 +622,14 @@ session_start();
 		if(!empty($_POST)){
             
 			include_once 'backend/dbconnect.php';
-            $query_id=$_POST['query_id']
+            $query_id=$_POST['query_id'];
 			 $guest_name =$_POST['guest_name'];
 			 $from_date =$_POST['from_date'];
 			 $to_date = $_POST['to_date'];
             $fromcountry = $_POST['fromcountry'];
             $tocountry = $_POST['tocountry'];
             $passportno = $_POST['passportno'];
-            $admin_name=$_POST['admin_name']
+            $admin_name=$_POST['admin_name'];
 			
                                
 			    $sqlr="UPDATE `flight_book` SET `admin_name`='$admin_name',`flight_origin`='$fromcountry',`flight_desctination`='$tocountry',`flight_start_date`='$from_date',`flight_end_date`='$to_date',`flight_on_person`='$guest_name',`flight_passport_number`='$passportno' WHERE `query_id`='$query_id'";
