@@ -2,23 +2,22 @@
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         width: 500px;
-        height: 400px;
-         margin-top: 100px;
-         margin-left: auto;
+        height: 343px;
+         margin: auto;
         background: #fff;
         position: relative;
-        margin-right: auto;
+       
     }
     
     .ticketview:hover{
         box-shadow: 2px 8px 8px 0 rgba(0,0,0,0.2);
         width: 500px;
-        height: 400px;
+        height: 343px;
     }
     
     .cutouts_left{
         width: 100px;
-        height:100px;
+        height:70px;
         left: -50px;
         position: absolute;
         background-color: #fff;
@@ -29,7 +28,7 @@
     
     .cutouts_right{
          width: 100px;
-        height:100px;
+        height:70px;
         left: 450px;
      
         position: absolute;
@@ -39,22 +38,22 @@
     }
     
     .statusdiv{
-         width: 80px;
-        height:80px;
-       border: 2px solid #1480BF;
-       border-radius: 40px;
+       width: 70px;
+       height: 70px;
+       border: 2px solid #fff ;
+       border-radius: 35px;
         left: 200px;
         text-align: center;
         color: #1480BF;
-        margin: 10px;
-            font-size: 54px;
+        margin: auto;
+            font-size: 45px;
         position: absolute;
     }
     
     
      .cutouts_left:hover{
         width: 100px;
-        height:100px;
+        height:70px;
         left: -50px;
         position: absolute;
         background-color: #fff;
@@ -65,7 +64,7 @@
     
     .cutouts_right:hover{
          width: 100px;
-        height:100px;
+        height:70px;
         left: 450px;
         
         position: absolute;
@@ -91,15 +90,16 @@
         color: #fff;
         padding: 13px;
         font-size: 17px;
-        margin-top: 34px;
+        margin-top: 10px;
         text-align: center;
     }
     .upperhalf{
-         width: 500px;
-        height: 108px;
-          padding: 16px;
-         border-bottom:2px #DCDCDC dashed;
-        text-align: center;
+            width: 500px;
+            height: 88px;
+            padding: 16px;
+        margin-bottom: 10px;
+            border-bottom: 2px #DCDCDC dashed;
+            text-align: center;
     }
     
     .lowerhalf{
@@ -108,7 +108,7 @@
          border-top:2px #DCDCDC dashed;
         position: absolute;
         text-align: center;
-        top: 250px;
+       top: 217px;
     }
     
     .tokennumber{
