@@ -266,7 +266,24 @@ function myFunction(mystring) {
 }
 
            function calleditPage(queryId){
-                window.location='http://localhost/updatehotel.php?query_id='+queryId;
+               
+               var inputString = queryId;
+               var resultString = inputString.substring(0, 2);
+               var ho = resultString.localeCompare("HO");
+               
+                var fl = resultString.localeCompare("FL");
+                var vi = resultString.localeCompare("VI");
+                var lu = resultString.localeCompare("LU");
+                var ta = resultString.localeCompare("TA");
+                
+               
+               
+               if(ho==0){
+                    window.location='http://localhost/updatehotel.php?query_id='+queryId;
+               }else if(vi==0){
+                   window.location='http://localhost/updatevisa.php?query_id='+queryId;
+               }
+               
            }
                 
             </script>  
