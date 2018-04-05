@@ -53,6 +53,7 @@ session_start();
                 <div class="caldiv form-group  input-group input-group-lg">
                     <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
                         <input class="form-control" id="visa_end_date" name="to_date" placeholder="Enter End Date" type="text" />
+                     <input type="hidden" name="query_id" id="queryid" class="form-control" value="<?php $query_id=$_GET['query_id']; echo $query_id; ?>" >
                 </div>
                 <div class="dropdowndiv ui selection dropdown">
                     <input type="hidden" id="visa_country" name="country" required>
@@ -350,5 +351,36 @@ session_start();
         
 	
 ?>
+    
+    <script>
+         var xmlhttp=new XMLHttpRequest();
+        
+        xmlhttp.onreadystatechange=function(){
+            
+            if(this.readyState==4 && this.status == 200){
+                var myObj=JSON.parse(this.responseText);
+                
+                document.getElementById("visa_start_date").value=myObj.visa_start_date;
+                
+                document.getElementById("visa_end_date").value=myObj.visa_end_date;
+                
+                 document.getElementById("visa_country").value=myObj.visa_country;
+                
+                
+
+                
+              
+                
+                
+            }
+            
+        }
+        
+        $(document).ready(function(){
+        var queryid=document.getElementById("queryid").value;
+        xmlhttp.open("GET","http://localhost/backend/status_query.php?query_id="+queryid,true);
+                xmlhttp.send();
+        });
+    </script>    
 </body>
 </html>

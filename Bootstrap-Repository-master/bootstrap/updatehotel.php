@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Start the session
 session_start();
 ?>
@@ -46,14 +46,16 @@ session_start();
                 <fieldset><legend>Hotel Booking:</legend>
                 <div class="form-group  input-group input-group-lg">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
-                    <input type="text" name="guest_name" class="form-control" placeholder="Guest Name" required>
+                    <input type="text" name="guest_name" class="form-control" placeholder="Guest Name" id="guestname" required>
+                    
+                      <input type="hidden" name="query_id" id="queryid" class="form-control" value="<?php $query_id=$_GET['query_id']; echo $query_id; ?>" >
                 </div>
 
                 <div class="form-group  input-group input-group-lg">
                     <span class="input-group-addon">
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                     </span>
-                    <input type="text" class="form-control" name="city" placeholder="Enter city, location or Hotel Name" required>
+                    <input type="text" class="form-control" name="city" id="city" placeholder="Enter city, location or Hotel Name" required>
                 </div>
 
                 <div class="checkbox col-md-offset-4 ">
@@ -66,7 +68,7 @@ session_start();
                             <span class="input-group-addon">
                                 <i class="fa fa-h-square" aria-hidden="true"></i>
                             </span>
-                            <input type="text" class="form-control" id="preferance1" name="pref1" placeholder="Preference 1">
+                            <input type="text" class="form-control" id="preference1" id="preferenceone" name="pref1" placeholder="Preference 1">
                         </div>
                     </div>
                     <div class="col-sm-6 ">
@@ -74,7 +76,7 @@ session_start();
                             <span class="input-group-addon">
                                 <i class="fa fa-h-square" aria-hidden="true"></i>
                             </span>
-                            <input type="text" class="form-control" id="preferance2" name="pref2" placeholder="Preference 2">
+                            <input type="text" class="form-control" id="preference2" name="pref2" id="preferencetwo" placeholder="Preference 2">
                         </div>
                     </div>
                 </div>
@@ -85,7 +87,7 @@ session_start();
                             <span class="input-group-addon">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                             </span>
-                            <input class="form-control" id="date" name="checkin_date" placeholder="Check In" type="text" required>
+                            <input class="form-control" id="checkin" name="checkin_date" id="checkin" placeholder="Check In" type="text" required>
                         </div>
                     </div>
 
@@ -94,7 +96,7 @@ session_start();
                             <span class="input-group-addon">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                             </span>
-                            <input class="form-control" id="date" name="checkout_date" placeholder="Check Out" type="text" required>
+                            <input class="form-control" id="checkout" name="checkout_date" id="checkout" placeholder="Check Out" type="text" required>
                         </div>
                     </div>
                 </div>
@@ -103,7 +105,7 @@ session_start();
                     <div class="col-sm-6 ">
                         <div class="form-group  input-group input-group-lg">
                             <span class="input-group-addon"><i class="fa fa-users" aria-hidden="true"></i> </span>
-                            <input class="form-control" name="members_count" placeholder="Members" type="number" min="1"/>
+                            <input class="form-control" name="members_count" id="members" placeholder="Members" type="number" min="1"/>
                         </div>
                     </div>
 
@@ -112,7 +114,7 @@ session_start();
                             <span class="input-group-addon">
                                 <i class="fa fa-list-ol" aria-hidden="true"></i>
                             </span>
-                            <input class="form-control" name="room_count" name="no_room" placeholder="No.of Rooms" type="number" min="1" />
+                            <input class="form-control" name="room_count" name="no_room" id="noofroom" placeholder="No.of Rooms" type="number" min="1" />
                         </div>
                     </div>
                 </div>
@@ -137,10 +139,65 @@ session_start();
             
         </form>
     
-    <?php
+    
+</body>
+
+    <script>
+        
+        var xmlhttp=new XMLHttpRequest();
+        
+        xmlhttp.onreadystatechange=function(){
+            
+            if(this.readyState==4 && this.status == 200){
+                var myObj=JSON.parse(this.responseText);
+                
+                document.getElementById("guestname").value=myObj.guest_name;
+                
+                document.getElementById("city").value=myObj.city;
+                
+                 document.getElementById("preference1").value=myObj.prefone;
+                
+                 document.getElementById("preference2").value=myObj.preftwo;
+                
+                document.getElementById("checkin").value=myObj.checkin;
+                
+                 document.getElementById("checkout").value=myObj.checkout;
+                
+                 document.getElementById("members").value=myObj.member;
+                
+                document.getElementById("noofroom").value=myObj.room_count;
+                
+                 document.getElementById("comment").value=myObj.comment;
+                
+               
+
+                
+              
+                
+                
+            }
+            
+        }
+        
+        $(document).ready(function(){
+        var queryid=document.getElementById("queryid").value;
+        xmlhttp.open("GET","http://localhost/backend/status_query.php?query_id="+queryid,true);
+                xmlhttp.send();
+        });
+    
+    </script>    
+    
+    
+</html>
+
+
+
+
+<?php
 	
 	
 		if(!empty($_POST)){
+            
 			include_once 'backend/dbconnect.php';
             $query_id=$_POST['query_id'];
 			 $guest_name=$_POST['guest_name'];
@@ -157,15 +214,11 @@ session_start();
             $members_count=$_POST['members_count'];
             $room_count=$_POST['room_count'];
                                           
-			    $sqlr="UPDATE `hotel_book` SET `hotel_city`='$city',`hotel_pre1`='$pref1',`hotel_pre2`='$pref2',`hotel_checkin`='$checkin_date',`hotel_checkout`='$checkout_date',`hotel_guestname`='$guest_name',`hotel_member`='$members_count',`hotel_roomcount`='$room_count' WHERE `query_id`='$query_id';
+			    $sqlr="UPDATE `hotel_book` SET `hotel_city`='$city',`hotel_pre1`='$pref1',`hotel_pre2`='$pref2',`hotel_checkin`='$checkin_date',`hotel_checkout`='$checkout_date',`hotel_guestname`='$guest_name',`hotel_member`='$members_count',`hotel_roomcount`='$room_count' WHERE `query_id`='$query_id'";
 				$result=mysqli_query($conn,$sqlr);
                   
                
 			}
-		}
-        
+		
 	
 ?>
-</body>
-
-</html>

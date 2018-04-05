@@ -52,8 +52,7 @@ session_start();
                 <!--  <label for="usr">Name Of Person:</label> -->
                 <div class="form-group  input-group input-group-lg">
                     <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                    <input type="text" class="uione form-control" id="guest_name" name="guest_name"  placeholder="Guest Name" required>
-                    <input type="hidden" name="query_id" id="queryid" class="form-control" value="<?php $query_id=$_GET['query_id']; echo $query_id; ?>" >
+                    <input type="text" class="uione form-control" id="usr" name="guest_name"  placeholder="Guest Name" required>
                 </div>
             </div>
             <div class="row">
@@ -62,7 +61,7 @@ session_start();
                             <span class="input-group-addon">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                             </span>
-                            <input class="form-control" id="startdate" name="from_date" placeholder="Journey Start Date" type="text" required>
+                            <input class="form-control" id="date" name="from_date" placeholder="Journey Start Date" type="text" required>
                         </div>
                     </div>
 
@@ -71,14 +70,14 @@ session_start();
                             <span class="input-group-addon">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                             </span>
-                            <input class="form-control" id="enddate" name="to_date" placeholder="Journey End Date" type="text" required>
+                            <input class="form-control" id="date" name="to_date" placeholder="Journey End Date" type="text" required>
                         </div>
                     </div>
                 </div>
             <div class="row">
                <div class="col-sm-6 " > 
                 <div class="dropdowndiv ui selection dropdown">
-                    <input type="hidden" id="fromcity" name="fromcountry" required>
+                    <input type="hidden" name="fromcountry" required>
                     <i class="dropdown icon"></i>
                     <div class="default text">Source Country Name</div>
                     <div class="menu">
@@ -330,7 +329,7 @@ session_start();
 
                 <div class="col-sm-6 " > 
                     <div class="dropdowndiv ui selection dropdown">
-                        <input type="hidden" id="tocity" name="tocountry" required>
+                        <input type="hidden" name="tocountry" required>
                         <i class="dropdown icon"></i>
                         <div class="default text">Destination Country Name</div>
                         <div class="menu">
@@ -585,7 +584,7 @@ session_start();
                 <!--  <label for="usr">Guest Name:</label> -->
                 <div class="passdiv form-group  input-group input-group-lg">
                     <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                    <input type="text" class="uione form-control" id="passportno" name="passportno"  placeholder="Passport Number" required>
+                    <input type="text" class="uione form-control" id="usr" name="passportno"  placeholder="Passport Number" required>
                 </div>
             </div>
                 
@@ -621,15 +620,14 @@ session_start();
 <?php	
 		if(!empty($_POST)){
             
-			include_once 'backend/dbconnect.php';
-            $query_id=$_POST['query_id']
+			include_once 'backend/dbconnect.php';	  
 			 $guest_name =$_POST['guest_name'];
 			 $from_date =$_POST['from_date'];
 			 $to_date = $_POST['to_date'];
             $fromcountry = $_POST['fromcountry'];
             $tocountry = $_POST['tocountry'];
             $passportno = $_POST['passportno'];
-            $admin_name=$_POST['admin_name']
+
 			
                                
 			    $sqlr="UPDATE `flight_book` SET `admin_name`='$admin_name',`flight_origin`='$fromcountry',`flight_desctination`='$tocountry',`flight_start_date`='$from_date',`flight_end_date`='$to_date',`flight_on_person`='$guest_name',`flight_passport_number`='$passportno' WHERE `query_id`='$query_id'";

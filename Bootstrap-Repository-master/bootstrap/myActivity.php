@@ -13,31 +13,34 @@
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
 	
     <style>
-        table, th, td {
-            border: 1px solid black !important ;
-            }
+        
+        
+        
     </style>    
 
     <body>
+        
         
             <div class="main">
                 
               
                 
                 
-                
+              
                     
             <div class="first col-sm-6 "> 
+                
+                       
                         <div class="container">
-                            
-                                <table class="table" id="querytable">
+                             <button id="fixedbutton" onclick="gotoHome()" class="btn btn-success"><i class="fa fa-home" aria-hidden="true"></i> Home</button>
+                                <table class="table" id="querytable" style=" border: 1px solid black !important ;">
                                         <thead>
-                                                <tr>
-                                                        <th>Ticket No</th>
-                                                        <th>Query</th>
-                                                        <th>Admin Name</th>
-                                                        <th>Date/Time</th>
-                                                        <th> </th>
+                                                <tr style=" border: 1px solid black !important ;">
+                                                        <th style=" border: 1px solid black !important ;    width: 67px;">Ticket No</th>
+                                                        <th style=" border: 1px solid black !important; text-align:center;">Query</th>
+                                                        <th style=" border: 1px solid black !important; text-align:center;">Admin Name</th>
+                                                        <th style=" border: 1px solid black !important; text-align:center;">Date/Time</th>
+                                                        <th style="border: 1px solid black !important; text-align:center; width: 204px;"> </th>
                                                 </tr>
                                         </thead>
                                 
@@ -56,57 +59,91 @@
                                   
                     <div class="second_upper"   >
                       
-                        <div class="ticketview">
+                        <div class="middle">
+                                <div class="inner">
+                                    <div id="printableArea">
+                                     <div class="ticketview">
         
-        <div class="ticketheader"> <span id="querytitle"> Visa Management </span></div>
+        <div class="ticketheader"> <span id="querytitle"> Your ticket is empty  </span></div>
         
         
         <div class="upperhalf">
         
-            <span class="tokennumber">Token Number: 1234</span>
-            <span class="timestamp">Date: 28/03/2018</span>
+            <span class="tokennumber" id="tokennumber"></span>
+            <span class="timestamp" id="datestamp"></span>
             <br>
-             <span class="timestamp">Time: 11:43 AM</span>
+             <span class="timestamp" id="timestamp"></span>
             <div class="clearbox"></div>
-            <br>
-            <span class="employeename"><b>Name : Swapnil Damkondwar (10011)</b></span>
+    
+            <span class="employeename" id="employeename"><b></b></span>
 
         
         </div>
     
            
         <div class="cutouts_left"></div>
-        <div class="statusdiv"> <i class="fa fa-trash-o" aria-hidden="true"></i> </div>
+        <div class="statusdiv" > <i class="" id="statusicon" aria-hidden="true"></i> </div>
         <div class="cutouts_right"></div>
         
         
         <div class="lowerhalf">
         
               <br>
-            <span class="employeename"><b>Assigned Person : Person One (10011)</b></span>
+            <span class="employeename" id="assignedperson"><b></b></span>
             <br>
-             <span class="note"><b>" Current Issue Is Deleted By Admin "</b></span>
+             <span class="note" id="note"><b></b></span>
             
             <div class="ticketfooter">
             
-            <span class="tokennumber">Current Date: 28/03/2018</span>
-            <span class="timestamp">Current Time: 07:30 PM </span>
+            <span class="tokennumber" id="downloaddate"></span>
+            <span class="timestamp" id="downloadtime"> </span>
                 
             </div>
         
         </div>
     
+                                </div>
+                                    </div>
+                                    <br>
+                                    <button class="btn btn-success" onclick="printDiv('printableArea')"  ><i class="fa fa-print" aria-hidden="true"></i> Print / Save as PDF</button>
+                        </div>
+                        
+                        
+                        
+                      
     </div>
                         
                     </div>
                         
                             
                             
-                    <div class="second_lower "  >
+                    <div class="second_lower">
                     
-                       
-           
-                        
+                        <div class="middle">
+                                <div class="inner">
+                                    
+                                    <div class="graphicaldiv" style=" background: #ff4c4c;">
+                                      <i class="fa fa-hand-o-up" aria-hidden="true"></i><br>
+                                               1111  
+                                            <span>Raised</span>
+                                    </div>
+                                    
+                                    
+                                    <div class="graphicaldiv" style=" background-color: #1480BF;">
+                                     <i class="fa fa-cogs" aria-hidden="true"></i><br>
+                                               111  
+                                            <span>Inprocess</span>
+                                    </div>
+                                    
+                                    
+                                    <div class="graphicaldiv" style=" background-color: #5FB563;">
+                                        <i class="fa fa-check" aria-hidden="true"></i><br>
+                                               1  
+                                        <span>Completed</span>
+                                    </div>
+                                    
+                                </div>
+                        </div>
                         
                     </div>    
                     
@@ -122,7 +159,7 @@
                 xmlhttprequest.onreadystatechange=function(){
                     
                     if(this.readyState==4 && this.status==200){
-                       var myArray=JSON.parse(this.responseText)
+                       var myArray=JSON.parse(this.responseText);
                        
                        
                         
@@ -136,14 +173,16 @@
                             var myObject=myArray[i];
                              var row = table.insertRow(1);
                             
-                        row.className='info';
+                    
                             
-                            if(myObject.status== '1'){
+                            if(myObject.status== '2'){
                                  row.className='success';
-                            }else if(myObject.status== '2'){
+                            }else if(myObject.status== '1'){
                                   row.className='warning';
-                            }else if(myObject.status== '3') {
+                            }else if(myObject.status== '0') {
                                   row.className='danger';
+                            }else{
+                                 row.className='info';
                             }
                             
                         var cell1 = row.insertCell(0);    
@@ -157,17 +196,9 @@
                         cell3.innerHTML = myObject.admin_name;
                         cell4.innerHTML = myObject.date_time;
                             
-                        cell5.innerHTML = '<input type="button" class="btn btn-primary" value="how" id='+myObject.query_id + 'onclick="myFunction()"'+'>';
+                        cell5.innerHTML = '<input type="button" class="btn btn-primary" value="Show" id='+myObject.query_id + ' onclick="myFunction(\''+myObject.query_id+'\')"'+'>'+'&nbsp;<button class="btn btn-warning"  id='+myObject.query_id + ' onclick="calleditPage(\''+myObject.query_id+'\')"'+'><i class="fa fa-pencil" aria-hidden="true"></i></button>'+'&nbsp;<button class="btn btn-danger"  id='+myObject.query_id + ' onclick="calldeletePage(\''+myObject.query_id+'\')"'+'><i class="fa fa-trash" aria-hidden="true"></i></button>'+'&nbsp;<button class="btn btn-success"  id='+myObject.query_id + ' onclick="callclosingPage(\''+myObject.query_id+'\')"'+'><i class="fa fa-check" aria-hidden="true"></i></button>';
 
-                             
-                         /*  var btn = document.createElement('input');
-                            btn.type = "button";
-                            btn.className = "btn btn-primary";
-                              btn.id = myObject.query_id;
-                            btn.value="Show";
-                          btn.onclick = (function(entry) {return function() {chooseUser(entry);}});
-                            cell5.appendChild(btn);
-                            --!>*/
+                        
                         }
                        
                     }
@@ -177,10 +208,119 @@
                 xmlhttprequest.send();
    
             
+function myFunction(mystring) {
+   
+    
+    var xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function(){
+        if(this.readyState==4 && this.status==200){
+            
+          
+            var myObject=JSON.parse(this.responseText);
+            
+             
+            document.getElementById("querytitle").innerHTML=myObject.request;
+            document.getElementById("tokennumber").innerHTML="Token Number:- "+myObject.query_id;
+            document.getElementById("timestamp").innerHTML="Time:- "+myObject.time;
+            document.getElementById("datestamp").innerHTML="Date:- "+myObject.date;
+            document.getElementById("employeename").innerHTML="Employee Name:- "+myObject.emp_name;
+             document.getElementById("assignedperson").innerHTML="Assigned Person:- "+myObject.admin_Name;
+             document.getElementById("downloaddate").innerHTML="Download Date:- "+myObject.current_date;
+             document.getElementById("downloadtime").innerHTML="Download Time:- "+myObject.current_time;
 
-
-           
+            if(myObject.Status==0){
+               
+                document.getElementById("statusicon").className="fa fa-hand-o-up";
+                document.getElementById("note").innerHTML="This task is Raised but not Acknoledged by Admin";    
+                document.getElementById("note").style.color = "#FD4C50";    
+                document.getElementById("statusicon").style.color = "#FD4C50";
+               }
+               else if(myObject.Status==1){
                 
+                    document.getElementById("statusicon").className="fa fa-cog fa-spin  fa-fw";
+                    document.getElementById("note").innerHTML="This task is Inprocess";   
+                    document.getElementById("note").style.color = "#1E81BB";  
+                    document.getElementById("statusicon").style.color = "#1E81BB";
+                
+                }else if(myObject.Status==2){
+                
+                    document.getElementById("statusicon").className="fa fa-check";
+                    document.getElementById("note").innerHTML="This task is Completed";
+                    document.getElementById("note").style.color = "#62B368";
+                    document.getElementById("statusicon").style.color = "#62B368";
+                    document.getElementById("statusdiv").style.borderColor  = "#62B368 ";
+                    
+                    
+                }else{
+                    
+                     document.getElementById("statusicon").className="fa fa-trash";
+                     document.getElementById("note").innerHTML="This task is Deleted";
+                     document.getElementById("note").style.color = "#FD4C50"; 
+                     document.getElementById("statusicon").style.color = "#1E81BB"; 
+                     document.getElementById("statusdiv").style.borderColor = "#1480BF ";
+                      
+                      
+                }
+            
+        }
+    }
+    
+    xmlhttp.open("GET","backend/request_data.php?query_id="+mystring,true);
+    xmlhttp.send();
+    
+    
+    
+}
+                
+                function gotoHome(){
+                    alert();
+                     window.location='http://localhost/getrequest.php';
+                }
+
+           function calleditPage(queryId){
+               
+               var inputString = queryId;
+               var resultString = inputString.substring(0, 2);
+               var ho = resultString.localeCompare("HO");
+               
+                var fl = resultString.localeCompare("FL");
+                var vi = resultString.localeCompare("VI");
+                var lu = resultString.localeCompare("LU");
+                var ta = resultString.localeCompare("TA");
+                
+               
+               
+               if(ho==0){
+                    window.location='http://localhost/updatehotel.php?query_id='+queryId;
+               }else if(vi==0){
+                   window.location='http://localhost/updatevisa.php?query_id='+queryId;
+               }else if(ta==0){
+                   window.location='http://localhost/updatetaxi.php?query_id='+queryId;
+               }else if(lu==0){
+                   window.location='http://localhost/updatelunch.php?query_id='+queryId;
+               }
+               
+           }
+                
+            function calldeletePage(queryId){
+                alert(queryId);
+            }   
+                
+                
+            function callclosingPage(queryId){
+              alert(queryId);  
+            }    
+                
+            function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}    
             </script>  
 
     </body>

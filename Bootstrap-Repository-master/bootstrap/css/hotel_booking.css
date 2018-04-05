@@ -6,7 +6,7 @@ body {
 
 .hoteldiv {
     width: 550px;
-    height: 430px;
+    height: auto;
     padding: 16px;
     background-color: #fff;
     border-radius: 4px;
@@ -20,7 +20,7 @@ body {
     margin: auto;
     text-align: center;
     width: 400px;
-    height: 300px;
+   height: 140px;
 }
 
 

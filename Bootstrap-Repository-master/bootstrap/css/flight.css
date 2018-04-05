@@ -95,7 +95,12 @@ hr{
     margin-right: 20px;  
 }
 
-
+.dropdowndi
+{
+    width:510px; !important
+    line-height: 4em; !important
+    height: 46px; !important
+}
 
 
 

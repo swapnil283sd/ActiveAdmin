@@ -21,7 +21,7 @@ session_start();
     <script type="text/javascript" src="js/datepicker.js"></script>
     <link rel="stylesheet" href="css/datepickerstyle.css" />
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
+    
     <script>
           $(document).ready(function() {
               $('ui.dropdown').dropdown();
@@ -54,7 +54,7 @@ session_start();
                 <div class="col-sm-6 " >
                     <div class="form-group  input-group input-group-lg">
                         <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                        <input class="form-control" id="taxi_date" name="taxi_date" placeholder="Enter Starting Date" type="text" required>
+                        <input class="form-control" id="taxi_start_date" name="taxi_date" placeholder="Enter Starting Date" type="text" required>
                     </div>
                 </div>
                 <div class="col-sm-6 " >
@@ -105,9 +105,42 @@ session_start();
                
 			}
         
-        }
+        
 	
 ?>
+    <script>
+     var xmlhttp=new XMLHttpRequest();
+        
+        xmlhttp.onreadystatechange=function(){
+            
+            if(this.readyState==4 && this.status == 200){
+                var myObj=JSON.parse(this.responseText);
+                
+                document.getElementById("taxi_guest_name").value=myObj.taxi_guest_name;
+                
+                document.getElementById("taxi_start_date").value=myObj.taxi_start_date;
+                
+                 document.getElementById("taxi_time").value=myObj.taxi_time;
+                
+                
+                
+               
+
+                
+              
+                
+                
+            }
+            
+        }
+        
+        $(document).ready(function(){
+        var queryid=document.getElementById("queryid").value;
+        xmlhttp.open("GET","http://localhost/backend/status_query.php?query_id="+queryid,true);
+                xmlhttp.send();
+        });
+    
+    </script>
     
 </body>
 
