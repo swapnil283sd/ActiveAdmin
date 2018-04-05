@@ -1,12 +1,12 @@
 body{
-    background-color:#FBFCFC !important;
+    background-color:#DCE1E6 !important;
     height: 100%;
 }
 
 
 .lunchdiv{
   width: 550px;
-  height: 271px;
+  height: auto;
   padding: 16px;
   background-color: #fff;   
   border-radius: 4px; 
@@ -15,10 +15,13 @@ body{
   position: relative;
 }
 
+
+
 .topimageclass{
  margin: auto;
     text-align: center;
- width: 400px;height: 250px;
+ width: 400px;
+    height: 250px;
    
 }
 
@@ -94,4 +97,11 @@ hr {
 {
     height: 46px;
     
+}
+
+.dropdowndiv
+{
+    width:510px; !important
+    line-height: 4em; !important
+    height: 46px; !important
 }

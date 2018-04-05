@@ -58,6 +58,7 @@
                       
                         <div class="middle">
                                 <div class="inner">
+                                    <div id="printableArea">
                                      <div class="ticketview">
         
         <div class="ticketheader"> <span id="querytitle"> Your ticket is empty  </span></div>
@@ -99,6 +100,9 @@
         </div>
     
                                 </div>
+                                    </div>
+                                    <br>
+                                    <button class="btn btn-success" onclick="printDiv('printableArea')"  ><i class="fa fa-print" aria-hidden="true"></i> Print / Save as PDF</button>
                         </div>
                         
                         
@@ -189,7 +193,7 @@
                         cell3.innerHTML = myObject.admin_name;
                         cell4.innerHTML = myObject.date_time;
                             
-                        cell5.innerHTML = '<input type="button" class="btn btn-primary" value="Show" id='+myObject.query_id + ' onclick="myFunction(\''+myObject.query_id+'\')"'+'>'+'&nbsp;<button class="btn btn-warning"  id='+myObject.query_id + ' onclick="calleditPage(\''+myObject.query_id+'\')"'+'><i class="fa fa-pencil" aria-hidden="true"></i></button>'+'&nbsp;<button class="btn btn-danger"  id='+myObject.query_id + ' onclick="calleditPage(\''+myObject.query_id+'\')"'+'><i class="fa fa-trash" aria-hidden="true"></i></button>'+'&nbsp;<button class="btn btn-success"  id='+myObject.query_id + ' onclick="calleditPage(\''+myObject.query_id+'\')"'+'><i class="fa fa-check" aria-hidden="true"></i></button>';
+                        cell5.innerHTML = '<input type="button" class="btn btn-primary" value="Show" id='+myObject.query_id + ' onclick="myFunction(\''+myObject.query_id+'\')"'+'>'+'&nbsp;<button class="btn btn-warning"  id='+myObject.query_id + ' onclick="calleditPage(\''+myObject.query_id+'\')"'+'><i class="fa fa-pencil" aria-hidden="true"></i></button>'+'&nbsp;<button class="btn btn-danger"  id='+myObject.query_id + ' onclick="calldeletePage(\''+myObject.query_id+'\')"'+'><i class="fa fa-trash" aria-hidden="true"></i></button>'+'&nbsp;<button class="btn btn-success"  id='+myObject.query_id + ' onclick="callclosingPage(\''+myObject.query_id+'\')"'+'><i class="fa fa-check" aria-hidden="true"></i></button>';
 
                         
                         }
@@ -282,10 +286,33 @@ function myFunction(mystring) {
                     window.location='http://localhost/updatehotel.php?query_id='+queryId;
                }else if(vi==0){
                    window.location='http://localhost/updatevisa.php?query_id='+queryId;
+               }else if(ta==0){
+                   window.location='http://localhost/updatetaxi.php?query_id='+queryId;
+               }else if(lu==0){
+                   window.location='http://localhost/updatelunch.php?query_id='+queryId;
                }
                
            }
                 
+            function calldeletePage(queryId){
+                alert(queryId);
+            }   
+                
+                
+            function callclosingPage(queryId){
+              alert(queryId);  
+            }    
+                
+            function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}    
             </script>  
 
     </body>

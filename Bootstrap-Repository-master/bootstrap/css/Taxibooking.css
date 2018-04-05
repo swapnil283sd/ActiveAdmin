@@ -14,6 +14,13 @@ body{
     position: relative;
 }
 
+.dropdowndiv
+{
+    width:509px;
+    line-height: 4em;
+    height: 46px;
+}
+
 
 .topimageclass{
     margin: auto;
