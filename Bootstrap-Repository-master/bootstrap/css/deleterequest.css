@@ -4,12 +4,12 @@ body{
 }
 
 .taxidiv{
-    width: 550px;
+    width: 400px;
     height: auto;
     padding: 20px;
     background-color: #fff;   
     border-radius: 4px; 
-    margin: auto;      
+    margin-top: 150px;     
     z-index: 1;
     position: relative;
 }
@@ -41,6 +41,22 @@ body{
 .submitbutton{
     margin: auto;
     text-align: center;
+}
+
+
+   fieldset {
+    border: 2px solid #107EBE;
+    margin: 0 2px;
+    padding: .35em .625em .75em;
+
+}
+
+
+
+legend {
+    width:inherit; /* Or auto */
+    padding:2 10px; !important /* To give a bit of padding on the left and right */
+    border-bottom:none;
 }
 
 
