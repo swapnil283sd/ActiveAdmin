@@ -13,28 +13,26 @@ session_start();
 	<link rel="stylesheet" href="css/lunchsystem.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/lunchsystem.js"></script>
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
     <script type="text/javascript" src="js/datepicker.js"></script>
-    <script type="text/javascript" src="js/lunchsystem.js"></script>
     <link rel="stylesheet" href="css/datepickerstyle.css" />
-    <script type="text/javascript" src="js/timepicker.js"></script>
     <link rel="stylesheet" href="css/semantic.min.css"/>
-    <script src="js/jquery.min.js"></script>
     <script src="js/semantic.min.js"></script>
     <script src="js/lunchsystem.js"></script>
     <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
+
     
 </head>
 
 <body>
 	<div class="navbar">
 		<img  src="image/logo.png" />    
-		<a href="#contact"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
-		<a href="#news"><i class="fa fa-list-ol" aria-hidden="true"></i>&nbsp; My Activity</a>
-		<a href="#home"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
-    </div>	
+		<a href="getrequest.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
+		<a href="myactivity.php"><i class="fa fa-list-ol" aria-hidden="true"></i>&nbsp; My Activity</a>
+		<a href="getrequest.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
+    </div>
   
     <div class="topimageclass">
         <img src="image/topimage.png" style="width: 400px;height: 300px;" />
@@ -81,7 +79,7 @@ session_start();
                 <div class="col-sm-6 " >
                     <div class="form-group  input-group input-group-lg">
                     <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                    <input class="form-control" id="date" name="order_date" placeholder="Date" type="text" />
+                    <input class="form-control" id="lunch_date" name="order_date" placeholder="Date" type="text" />
                     </div>
                 </div>
             </div>
@@ -128,7 +126,7 @@ session_start();
 				}
                 //request token generate
                                
-			    $sqlr="INSERT INTO `lunch_book`(`emp_name`, `admin_name`, `querie_id`, `lunch_category`, `lunch_date`, `lunch_member_count`) VALUES ('$emp_name','$admin_name','$query_id','$course','$order_date','$member_count')";
+			    $sqlr="INSERT INTO `lunch_book`(`emp_name`, `lunch_guest`, `admin_name`, `querie_id`, `lunch_category`, `lunch_date`, `lunch_member_count`) VALUES ('$emp_name','$guest_name','$admin_name','$query_id','$course','$order_date','$member_count')";
 				$result=mysqli_query($conn,$sqlr);
                   
                
