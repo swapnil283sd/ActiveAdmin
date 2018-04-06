@@ -273,7 +273,7 @@ function myFunction(mystring) {
 }
                 
                 function gotoHome(){
-                    alert();
+                
                      window.location='http://localhost/getrequest.php';
                 }
 
@@ -298,6 +298,8 @@ function myFunction(mystring) {
                    window.location='http://localhost/updatetaxi.php?query_id='+queryId;
                }else if(lu==0){
                    window.location='http://localhost/updatelunch.php?query_id='+queryId;
+               }else if(fl==0){
+                   window.location='http://localhost/updateflight.php?query_id='+queryId;
                }
                
            }
