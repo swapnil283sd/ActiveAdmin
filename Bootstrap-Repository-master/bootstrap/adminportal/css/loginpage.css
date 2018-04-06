@@ -1,0 +1,48 @@
+/*
+	Comment
+*/
+
+a { /* Comment */ color: /* Comment */ Red; }
+
+body {
+	font-family: 'Quicksand', sans-serif;
+}
+
+.loginclass{
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  
+    padding: 10px;
+    background-color: lavender;
+    margin: 16px;
+    margin-top: 150px;
+    
+}
+
+.imglogin{
+    
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 30px;
+    width: 140px;
+    height: 100px;
+}
+
+.imgcontainer{
+    text-align: center;
+}
+
+.btn{
+    padding-bottom: 10px;
+    margin: 10px;
+	    
+}
+
+.alert alert-danger{
+	    padding: 8px;
+}
+.invisible {
+  visibility: hidden;
+}

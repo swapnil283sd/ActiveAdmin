@@ -14,7 +14,7 @@ session_start();
     <link rel="stylesheet" href="css/header.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/visa.js"></script>
+    <script src="js/flight_booking.js"></script>
     <link rel="stylesheet" href="css/semantic.min.css"/>
     <script src="js/semantic.min.js"></script>
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">

@@ -44,13 +44,13 @@ session_start();
                 <div class="col-sm-6 " >
                     <div class="form-group  input-group input-group-lg">
                         <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                        <input class="form-control" id="date" name="taxi_date" placeholder="Enter Starting Date" type="text" />
+                        <input class="form-control" id="taxi_start_date" name="taxi_date" placeholder="Enter Starting Date" type="text" />
                     </div>
                 </div>
                 <div class="col-sm-6 " >
                     <div class="form-group  input-group input-group-lg">
                         <span class="input-group-addon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                        <input class="form-control"  name="taxi_time" placeholder="Time" type="number" />
+                        <input class="form-control"  name="taxi_time" placeholder="Time" type="time" />
                     </div>
                 </div>    
             </div>
