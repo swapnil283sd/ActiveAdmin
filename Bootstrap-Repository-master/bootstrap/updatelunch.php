@@ -27,10 +27,10 @@ session_start();
 <body>
 	<div class="navbar">
 		<img  src="image/logo.png" />    
-		<a href="getrequest.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
-		<a href="myactivity.php"><i class="fa fa-list-ol" aria-hidden="true"></i>&nbsp; My Activity</a>
-		<a href="getrequest.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
-    </div>
+		<a href="#contact"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
+		<a href="#news"><i class="fa fa-list-ol" aria-hidden="true"></i>&nbsp; My Activity</a>
+		<a href="#home"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
+    </div>	
   
     <div class="topimageclass">
         <img src="image/topimage.png" style="width: 400px;height: 300px;" />

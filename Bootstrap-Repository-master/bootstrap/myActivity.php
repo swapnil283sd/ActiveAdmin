@@ -273,7 +273,7 @@ function myFunction(mystring) {
 }
                 
                 function gotoHome(){
-                    alert();
+                
                      window.location='http://localhost/getrequest.php';
                 }
 
@@ -305,12 +305,12 @@ function myFunction(mystring) {
            }
                 
             function calldeletePage(queryId){
-                alert(queryId);
+                 window.location='http://localhost/deleterequest.php?query_id='+queryId;
             }   
                 
                 
             function callclosingPage(queryId){
-              alert(queryId);  
+              window.location='http://localhost/closerequest.php?query_id='+queryId;
             }    
                 
             function printDiv(divName) {

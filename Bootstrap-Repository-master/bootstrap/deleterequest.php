@@ -25,8 +25,8 @@ session_start();
 	
     
         <center>
-        <div class="taxidiv card">
-            <fieldset><legend>Query Id</legend>
+        <div class="taxidiv card" style=" margin-top: 80px;">
+            <fieldset><legend><?php $query_id=$_GET['query_id']; echo $query_id; ?></legend>
             <label>Do you really want to delete request?</label>
             <div class="row"><hr></div>
             <div class="row">

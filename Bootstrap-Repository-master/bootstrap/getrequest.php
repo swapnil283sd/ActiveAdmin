@@ -29,8 +29,8 @@ session_start();
     <div class="navbar">
 		<img  src="image/logo.png" />    
 		<a href="#contact"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
-		<a href="#news"><i class="fa fa-list-ol" aria-hidden="true"></i>&nbsp; My Activity</a>
-		<a href="#home"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
+		<a href="http://localhost/myactivity.php"><i class="fa fa-list-ol" aria-hidden="true"></i>&nbsp; My Activity</a>
+		<a href="http://localhost/getrequest.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
     </div>	
     
     <div class="topimageclass">
@@ -48,7 +48,7 @@ session_start();
 					<option value="hotel Booking Request">Hotel Booking Request</option>
 					<option value="Flight Ticket Booking Request">Flight Ticket Booking Request</option>
 					<option value="VISA Request">VISA Request</option>
-					<option value="Lunch Arragement For User">Lunch Arragement For User</option>
+					<option value="Lunch Arragement For User">Lunch Arragement </option>
 					<option value="Taxi Arragement">Taxi Arragement</option>
 				</select>
 			</div><br><br>
@@ -125,7 +125,7 @@ session_start();
                 if($letter=='HO'){
 				    header("Location: hotel_booking.php");
                 }else if($letter=='FL'){
-                    header("Location: hotel_booking.php");
+                    header("Location: flight.php");
                 }else if($letter=='VI'){
                     header("Location: visa.php");
                 }else if($letter=='LU'){

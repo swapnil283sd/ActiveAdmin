@@ -617,7 +617,39 @@ session_start();
               
     </form>
         
+<script>
 
+         var xmlhttp=new XMLHttpRequest();
+        
+        xmlhttp.onreadystatechange=function(){
+            
+            if(this.readyState==4 && this.status == 200){
+               
+                
+                var myObj=JSON.parse(this.responseText);
+                
+                document.getElementById("guest_name").value=myObj.guest_name;
+                
+                document.getElementById("startdate").value=myObj.startdate;
+                
+                 document.getElementById("enddate").value=myObj.enddate;
+                
+                document.getElementById("fromcity").value=myObj.fromcity;
+                 document.getElementById("tocity").value=myObj.tocity;
+                  document.getElementById("passportno").value=myObj.passportno;
+                
+            }
+            
+        }
+        
+        $(document).ready(function(){
+           
+        var queryid=document.getElementById("queryid").value;
+        xmlhttp.open("GET","http://localhost/backend/status_query.php?query_id="+queryid,true);
+                xmlhttp.send();
+        });
+    
+</script>    
 <?php	
 		if(!empty($_POST)){
             
