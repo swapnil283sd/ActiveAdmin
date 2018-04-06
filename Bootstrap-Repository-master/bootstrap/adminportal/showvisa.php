@@ -68,11 +68,11 @@ session_start();
                     
               <div class="form-group">
                 <label for="comment">Comment:</label>
-                <textarea class="form-control" rows="2" id="commentvisa" disabled></textarea>
+                <textarea class="form-control" rows="2" id="comment" disabled></textarea>
             </div>
              
-                    <hr>
-                              
+                    <span id="emp_name" style="float:right;color:#107EBE"></span>
+                               <br>
             
         </div>
     </form>
@@ -113,9 +113,10 @@ session_start();
                  document.getElementById("visa_country").value=myObj.visa_country;
                 
                 
-
+                 document.getElementById("emp_name").innerHTML="Raised By :- " +myObj.emp_name;
                 
-              
+              document.getElementById("comment").innerHTML=myObj.comment;
+                
                 
                 
             }

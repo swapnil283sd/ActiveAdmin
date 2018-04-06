@@ -82,10 +82,11 @@ session_start();
             
             <div class="form-group">
                 <label for="comment">Comment:</label>
-                <textarea class="form-control" rows="2" id="commentlunch" disabled></textarea>
+                <textarea class="form-control" rows="2" id="comment" disabled></textarea>
             </div>
-      <br>
-            
+              <span id="emp_name" style="float:right;color:#107EBE;"></span> 
+     
+            <br> <br>
                           
         </div>
     </form>
@@ -135,8 +136,9 @@ session_start();
                  document.getElementById("lunch_member_count").value=myObj.lunch_member_count;
                 
                  document.getElementById("lunch_date").value=myObj.lunch_date;
+                document.getElementById("emp_name").innerHTML="Raised By :-"+myObj.emp_name;
+              document.getElementById("comment").innerHTML=myObj.comment;
                 
-              
             }
             
         }

@@ -13,7 +13,7 @@
             if (mysqli_num_rows($result) > 0) {
 		    // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
-                    $data=array("guest_name"=>$row['hotel_guestname'], "city"=>$row['hotel_city'], "prefone"=>$row['hotel_pre1'], "preftwo"=>$row['hotel_pre2'],"checkin"=>$row['hotel_checkin'],"checkout"=>$row['hotel_checkout'], "member"=>$row['hotel_member'],"room_count"=>$row['hotel_roomcount'],"comment"=>"mycomment","emp_name"=>);
+                    $data=array("guest_name"=>$row['hotel_guestname'], "city"=>$row['hotel_city'], "prefone"=>$row['hotel_pre1'], "preftwo"=>$row['hotel_pre2'],"checkin"=>$row['hotel_checkin'],"checkout"=>$row['hotel_checkout'], "member"=>$row['hotel_member'],"room_count"=>$row['hotel_roomcount'],"comment"=>"mycomment","emp_name"=>$row['emp_name'],"comment"=>$row['ho_comment']);
 		      }
 			  echo json_encode($data);
             }
@@ -24,7 +24,7 @@
             if (mysqli_num_rows($result) > 0) {
 		    // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
-                    $data=array("guest_name"=>$row['flight_on_person'], "startdate"=>$row['flight_start_date'], "enddate"=>$row['flight_end_date'], "fromcity"=>$row['flight_origin'],"tocity"=>$row['flight_desctination'],"passportno"=>$row['flight_passport_number'],"querytype"=>'FL');
+                    $data=array("guest_name"=>$row['flight_on_person'], "startdate"=>$row['flight_start_date'], "enddate"=>$row['flight_end_date'], "fromcity"=>$row['flight_origin'],"tocity"=>$row['flight_desctination'],"passportno"=>$row['flight_passport_number'],"querytype"=>'FL',"emp_name"=>$row['emp_name'],"comment"=>$row['fl_comment']);
 		      }
 			  echo json_encode($data);
             
@@ -37,7 +37,7 @@
                 if (mysqli_num_rows($result) > 0) {
 		          // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
-                    $data=array("visa_start_date"=>$row['visa_start_date'], "visa_end_date"=>$row['visa_end_date'], "visa_country"=>$row['visa_country'],"querytype"=>'vi');
+                    $data=array("visa_start_date"=>$row['visa_start_date'], "visa_end_date"=>$row['visa_end_date'], "visa_country"=>$row['visa_country'],"querytype"=>'vi',"emp_name"=>$row['emp_name'],"comment"=>$row['vi_comment']);
 		          }
 			     echo json_encode($data);
                 }
@@ -49,7 +49,7 @@
                 if (mysqli_num_rows($result) > 0) {
 		          // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
-                    $data=array("guest_name"=>$row['lunch_guest'], "course"=>$row['lunch_category'], "lunch_member_count"=>$row['lunch_member_count'], "lunch_date"=>$row['lunch_date'],"querytype"=>'lu');
+                    $data=array("guest_name"=>$row['lunch_guest'], "course"=>$row['lunch_category'], "lunch_member_count"=>$row['lunch_member_count'], "lunch_date"=>$row['lunch_date'],"querytype"=>'lu',"emp_name"=>$row['emp_name'],"comment"=>$row['lu_comment']);
 		          }
 			     echo json_encode($data);
                 }
@@ -60,7 +60,7 @@
                 if (mysqli_num_rows($result) > 0) {
 		          // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
-                    $data=array("taxi_guest_name"=>$row['taxi_guest_name'], "taxi_start_date"=>$row['taxi_start_date'], "taxi_time"=>$row['taxi_time'],"querytype"=>'ta');
+                    $data=array("taxi_guest_name"=>$row['taxi_guest_name'], "taxi_start_date"=>$row['taxi_start_date'], "taxi_time"=>$row['taxi_time'],"querytype"=>'ta',"emp_name"=>$row['emp_name'],"comment"=>$row['ta_comment']);
 		          }
 			     echo json_encode($data);
                 }

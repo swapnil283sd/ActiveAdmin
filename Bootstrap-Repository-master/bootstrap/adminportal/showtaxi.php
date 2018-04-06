@@ -68,12 +68,13 @@ session_start();
                 <br>
             <div class="form-group">
                 <label for="comment">Comment:</label>
-                <textarea class="form-control" rows="2" id="commenttaxi" disabled></textarea>
+                <textarea class="form-control" rows="2" id="comment" disabled></textarea>
             </div>
-                          
+              <span id="emp_name" style="float:right;color:#107EBE;"></span>
+            <br>
+                   
         </div>
-         
-        <hr>
+      
     </form>
     
 <?php	
@@ -104,15 +105,16 @@ session_start();
             if(this.readyState==4 && this.status == 200){
                 var myObj=JSON.parse(this.responseText);
                 
+              
+                   document.getElementById("emp_name").innerHTML="Raised By- "+myObj.emp_name;
                 document.getElementById("taxi_guest_name").value=myObj.taxi_guest_name;
                 
                 document.getElementById("taxi_start_date").value=myObj.taxi_start_date;
                 
                  document.getElementById("taxi_time").value=myObj.taxi_time;
                 
+                document.getElementById("comment").innerHTML=myObj.comment;
                 
-                
-               
 
                 
               

@@ -50,6 +50,7 @@ session_start();
             <fieldset><legend>Flight Booking:</legend>
             <div class="form-group">
                 <!--  <label for="usr">Name Of Person:</label> -->
+               
                 <div class="form-group  input-group input-group-lg">
                     <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                     <input type="text" class="uione form-control" id="guest_name" name="guest_name"  placeholder="Guest Name" disabled>
@@ -112,10 +113,11 @@ session_start();
                 
             <div class="form-group">
                 <label for="comment">Comment:</label>
-                <textarea class="form-control" rows="2" id="commentflight" disabled></textarea>
+                <textarea class="form-control" rows="2" id="comment" disabled></textarea>
             </div>
                     
-            
+             <span id="emp_name" style="float:right;color:#1380BF;"></span>
+                
                 </fieldset>
         </div>
               
@@ -141,6 +143,9 @@ session_start();
                 document.getElementById("fromcity").value=myObj.fromcity;
                  document.getElementById("tocity").value=myObj.tocity;
                   document.getElementById("passportno").value=myObj.passportno;
+                 document.getElementById("emp_name").innerHTML="Raised by:- "+myObj.emp_name;
+                 document.getElementById("comment").innerHTML=myObj.comment;
+                
                 
             }
             

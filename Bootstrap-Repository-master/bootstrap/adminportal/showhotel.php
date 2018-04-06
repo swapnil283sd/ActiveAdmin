@@ -121,8 +121,8 @@ session_start();
                     <label for="comment">Comment:</label>
                     <textarea class="form-control" rows="2" id="comment" disabled ></textarea>
                 </div>
-
-                <hr>
+                <span id="emp_name" style="float:right;color:#107EBE;"></span>
+             
                 
 </fieldset>
             </div>
@@ -160,7 +160,7 @@ session_start();
                  document.getElementById("comment").value=myObj.comment;
                 
                
-
+                document.getElementById("emp_name").innerHTML="Raised By:- "+myObj.emp_name;
                 
               
                 
