@@ -62,9 +62,9 @@ if(!isset($_SESSION["user"])){
   				<div class="default text">Admin Name</div>
 				<select class="ui fluid dropdown">
 					<option value="">Admin Name</option>
-					<option value="1">Omkar Deshpande</option>
-					<option value="2">Vaidya Sir</option>
-					<option value="3">Sachin Kulkarni</option>
+					<option value="1">Admin One</option>
+					<option value="2">Admin Two</option>
+					<option value="3">Admin Three</option>
 				</select>
             </div><br>
 			
@@ -115,7 +115,7 @@ if(!isset($_SESSION["user"])){
                 //request token generate
                 $letter = strtoupper(mb_substr($query_details, 0, 2));
                 
-			    $sqlr="INSERT INTO queries(emp_name,emp_id,emp_email,admin_name, admin_id, request_details, request_date, request_time, status) values ('$user','$emp_id','$email','$admin_name', '$admin_id','$query_details',CURRENT_DATE(),CURRENT_TIME(),'4')  ";
+			    $sqlr="INSERT INTO queries(emp_name,emp_id,emp_email,admin_name, admin_id, request_details, request_date, request_time, status) values ('$user','$emp_id','$email','$admin_name', '$admin_id','$query_details',CURRENT_DATE(),CURRENT_TIME(),'0')  ";
 				$result=mysqli_query($conn,$sqlr);
                 
                 $getsr="SELECT `srno` from `queries` WHERE (`emp_name`='$user' AND `admin_name`='$admin_name' AND `request_date`= CURRENT_DATE() AND `request_time`= CURRENT_TIME())";

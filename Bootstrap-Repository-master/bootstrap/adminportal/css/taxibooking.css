@@ -4,18 +4,30 @@ body{
 }
 
 .taxidiv{
-    width: 400px;
+    width: 550px;
     height: auto;
     padding: 20px;
     background-color: #fff;   
     border-radius: 4px; 
-    margin-top: 150px;     
+    margin: auto;      
     z-index: 1;
     position: relative;
 }
 
+.dropdowndiv
+{
+    width:509px;
+    line-height: 4em;
+    height: 46px;
+}
 
 
+.topimageclass{
+    margin: auto;
+    text-align: center;
+    width: 400px;
+    height: 250px;
+}
 
 
 .card {
@@ -41,22 +53,6 @@ body{
 .submitbutton{
     margin: auto;
     text-align: center;
-}
-
-
-   fieldset {
-    border: 2px solid #107EBE;
-    margin: 0 2px;
-    padding: .35em .625em .75em;
-
-}
-
-
-
-legend {
-    width:inherit; /* Or auto */
-    padding:2 10px; !important /* To give a bit of padding on the left and right */
-    border-bottom:none;
 }
 
 
