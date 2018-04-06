@@ -60,13 +60,13 @@ session_start();
                 <span class="input-group-addon">
                         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                     </span>
-                <input type="text" placeholder="Username" name="emp_username" id="Username"  required class="form-control">
+                <input type="text" placeholder="Username" name="admin_username" id="Username"  required class="form-control">
             </div>
 			<div class="form-group input-group input-group-lg">
                 <span class="input-group-addon">
                         <i class="fa fa-unlock" aria-hidden="true"></i>
                     </span>
-                <input type="password" placeholder="Password" name="emp_password" required class="form-control">
+                <input type="password" placeholder="Password" name="admin_password" required class="form-control">
                 
             </div>
 			<br>
@@ -89,15 +89,18 @@ session_start();
 
 		if(!empty($_POST)){
 			include_once 'backend/dbconnect.php';
-			$emp_username=$_POST['emp_username'];
-			$emp_password=$_POST['emp_password'];
+			$emp_username=$_POST['admin_username'];
+			$emp_password=$_POST['admin_password'];
 
-			$sql = "SELECT * FROM employee where emp_name='$emp_username' and emp_password='$emp_password'";
+			$sql = "SELECT * FROM admin where admin_name='$admin_username' and admin_password='$admin_password'";
 			$result = mysqli_query($conn, $sql);
 		
 			if (mysqli_num_rows($result) > 0) {
-				$_SESSION["user"] = $emp_username;
-				header("Location: getrequest.php");
+                
+                echo '$row_[admin_id]';
+                	$data=array('success' => false, 'message' =>'Login Failed try Again','adminid'=>'$row_[admin_id]');
+				$_SESSION["user"] = $admin_username;
+				//header("Location: getrequest.php");
 				// output data of each row
 				
 			} 
