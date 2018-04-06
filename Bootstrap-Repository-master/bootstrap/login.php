@@ -66,7 +66,7 @@ session_start();
                     </span>
                 <input type="password" placeholder="Password" name="emp_password" required class="form-control">
             </div>
-			</br>
+			<br>
 			<hr class="footer">
 			 <div class="row">
                     <div class="col-sm-4 ">
@@ -78,7 +78,6 @@ session_start();
                     </div>
                 </div>
 			</div>
-		</div>
 	</form>
 
 	<?php
@@ -94,14 +93,16 @@ session_start();
 		
 			if (mysqli_num_rows($result) > 0) {
 				$_SESSION["user"] = $emp_username;
-				header("Location: getrequest.php");
-				// output data of each row
+                while($row = $result->fetch_assoc()) {
+                    $_SESSION["usrid"] = $row["emp_id"];
+				}
 				
+				header("Location: getrequest.php");
+				// output data of each row	
 			} 
 			else {
 				$data=array('success' => false, 'message' =>'Login Failed try Again');
 				echo '<script> jfunction(); </script>';
-				
 			}
 		}
 	?>
