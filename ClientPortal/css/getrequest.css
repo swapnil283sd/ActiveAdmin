@@ -1,0 +1,72 @@
+body{
+    background-color: #DCE1E6 !important;
+    height: 100%;
+}
+
+
+.querydiv{
+  width: 500px;
+  height: 250px;
+  padding: 35px;
+  background-color: #fff;   
+  border-radius: 4px; 
+  margin: auto;      
+  z-index: 1;
+  position: relative;
+    
+}
+.dropdowndiv
+{
+    width:430px;
+        line-height: 2em;
+    
+}
+.topimageclass{
+ margin: auto;
+    text-align: center;
+ width: 400px;height: 250px;
+   
+}
+
+
+.card {
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+.container {
+    padding: 2px 16px;
+}
+
+
+.bg-primary a {
+	color: #fff;	
+}
+
+.submitbutton{
+    margin: auto;
+    text-align: center;
+    padding-top: 09px;
+    padding-left: 185px;
+}
+hr { 
+    display: block;
+    margin-top: 2.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    
+} 
+
+.dropdowndiv{
+    height: 46px;
+    width: 428px;
+}

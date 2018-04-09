@@ -1,0 +1,93 @@
+body{
+    background-color: #DCE1E6 !important;
+    height: 100%;
+}
+
+   fieldset {
+    border: 2px solid #107EBE !important;
+    margin: 0 2px;
+    padding: .35em .625em .75em;
+
+}
+
+
+
+legend {
+    width:inherit; /* Or auto */
+    padding:2 10px !important;  /* To give a bit of padding on the left and right */
+    border-bottom:none;
+    padding-left: 4px !important;
+    padding-right: 6px !important;
+}
+
+
+.taxidiv{
+    width: 550px;
+    height: auto;
+    padding: 10px;
+    background-color: #fff;   
+    border-radius: 4px; 
+    margin: auto;      
+    z-index: 1;
+    position: relative;
+}
+
+.dropdowndiv
+{
+    width:500px !important;
+    line-height: 4em;
+    height: 46px;
+}
+
+
+.topimageclass{
+    margin: auto;
+    text-align: center;
+    width: 400px;
+    height: 250px;
+}
+
+
+.card {
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+.container {
+    padding: 2px 16px;
+}
+
+   hr {
+    display: block;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-style: inset;
+    border-width: 1px;
+}
+hr{
+    margin: 1em 15px 0.5em 15px !important; 
+}
+
+.bg-primary a {
+	color: #fff;	
+}
+
+.submitbutton{
+    margin: auto;
+    text-align: center;
+    padding-top: 09px;
+    padding-left: 210px;
+}
+
+textarea {
+    resize: none;
+}
+
