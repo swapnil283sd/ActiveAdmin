@@ -10,7 +10,7 @@ session_start();
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/deleterequest.css">
+	<link rel="stylesheet" href="css/closerequest.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
@@ -25,9 +25,9 @@ session_start();
 	
     
         <center>
-        <div class="taxidiv card" style=" margin-top: 80px;">
+        <div class="taxidiv card">
             <fieldset><legend><?php $query_id=$_GET['query_id']; echo $query_id; ?></legend>
-            <label>Do you really want to delete request?</label>
+            <label>Do you really want to close request?</label>
             <div class="row"><hr></div>
             <div class="row">
                 
@@ -53,7 +53,7 @@ session_start();
 			include_once 'backend/dbconnect.php';	  
 			 $query_id=$_POST['query_id'];
             
-            $sqle = "UPDATE `queries` SET `status`=3 WHERE `query_id`='$query_id'";
+            $sqle = "UPDATE `queries` SET `status`=2 WHERE `query_id`='$query_id'";
 			$resulte = mysqli_query($conn, $sqle);
         
         }
